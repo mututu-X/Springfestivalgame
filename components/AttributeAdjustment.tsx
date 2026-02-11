@@ -42,52 +42,53 @@ export const AttributeAdjustment: React.FC<Props> = ({ character, currentStats, 
   };
 
   return (
-    <div className="min-h-screen bg-festive-dark flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-festive-dark flex flex-col items-center justify-center p-4 lg:p-8">
        
-       <div className="text-center mb-6 space-y-2">
+       <div className="text-center mb-6 lg:mb-10 space-y-2 lg:space-y-4">
         <div className="flex items-center justify-center space-x-2 text-festive-gold">
-          <div className="h-px w-8 bg-festive-gold"></div>
-          <span className="text-xs tracking-widest uppercase">角色属性</span>
-          <div className="h-px w-8 bg-festive-gold"></div>
+          <div className="h-px w-8 lg:w-16 bg-festive-gold"></div>
+          <span className="text-xs lg:text-sm tracking-widest uppercase">角色属性</span>
+          <div className="h-px w-8 lg:w-16 bg-festive-gold"></div>
         </div>
-        <h2 className="text-3xl font-bold text-white">确认你的初始属性</h2>
-        <p className="text-gray-400 text-sm">不满意可以搏一搏，单车变摩托！</p>
+        <h2 className="text-3xl lg:text-5xl font-bold text-white tracking-wide">确认你的初始属性</h2>
+        <p className="text-gray-400 text-sm lg:text-base">不满意可以搏一搏，单车变摩托！</p>
       </div>
 
-      <div className="bg-[#FFF5E6] w-full max-w-2xl rounded-3xl p-6 shadow-2xl relative text-gray-800 border-4 border-yellow-200">
+      {/* Increased max-width for large screens */}
+      <div className="bg-[#FFF5E6] w-full max-w-2xl lg:max-w-5xl rounded-3xl p-6 md:p-10 shadow-2xl relative text-gray-800 border-4 border-yellow-200">
         
-        {/* Header Small */}
-        <div className="flex items-center space-x-4 mb-6 pb-4 border-b border-gray-200">
-           <img src={character.avatar} alt={character.name} className="w-16 h-16 rounded-lg object-cover border-2 border-yellow-400" />
+        {/* Header Small - Scaled */}
+        <div className="flex items-center space-x-4 lg:space-x-6 mb-6 lg:mb-8 pb-4 border-b border-gray-200">
+           <img src={character.avatar} alt={character.name} className="w-16 h-16 lg:w-24 lg:h-24 rounded-lg object-cover border-2 border-yellow-400" />
            <div>
-             <h3 className="text-xl font-bold text-red-800">{character.name}</h3>
-             <p className="text-sm text-gray-500">{character.roleDescription}</p>
+             <h3 className="text-xl lg:text-3xl font-bold text-red-800">{character.name}</h3>
+             <p className="text-sm lg:text-lg text-gray-500 mt-1">{character.roleDescription}</p>
            </div>
         </div>
 
         {/* Stats Grid */}
-        <div className="space-y-6">
+        <div className="space-y-6 lg:space-y-8">
           
           <div>
-            <span className="bg-gray-200 text-gray-600 text-xs px-2 py-1 rounded font-bold mb-2 inline-block">基础属性 (固定)</span>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-               <div className="bg-yellow-50 p-4 rounded-xl flex justify-between items-center border border-yellow-100">
-                  <span className="flex items-center text-yellow-800 font-bold"><span className="text-xl mr-2">💰</span> 存款</span>
-                  <span className="text-xl font-bold text-yellow-600">¥{currentStats.money.toLocaleString()}</span>
+            <span className="bg-gray-200 text-gray-600 text-xs lg:text-sm px-2 py-1 lg:px-3 lg:py-1.5 rounded font-bold mb-2 inline-block">基础属性 (固定)</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+               <div className="bg-yellow-50 p-4 lg:p-6 rounded-xl flex justify-between items-center border border-yellow-100">
+                  <span className="flex items-center text-yellow-800 font-bold lg:text-xl"><span className="text-xl lg:text-3xl mr-2 lg:mr-3">💰</span> 存款</span>
+                  <span className="text-xl lg:text-3xl font-bold text-yellow-600">¥{currentStats.money.toLocaleString()}</span>
                </div>
-               <div className="bg-blue-50 p-4 rounded-xl flex justify-between items-center border border-blue-100">
-                  <span className="flex items-center text-blue-800 font-bold"><span className="text-xl mr-2">⚖️</span> 体重</span>
-                  <span className="text-xl font-bold text-blue-600">{currentStats.weight}kg</span>
+               <div className="bg-blue-50 p-4 lg:p-6 rounded-xl flex justify-between items-center border border-blue-100">
+                  <span className="flex items-center text-blue-800 font-bold lg:text-xl"><span className="text-xl lg:text-3xl mr-2 lg:mr-3">⚖️</span> 体重</span>
+                  <span className="text-xl lg:text-3xl font-bold text-blue-600">{currentStats.weight}kg</span>
                </div>
             </div>
           </div>
 
           <div>
             <div className="flex items-center space-x-2 mb-2">
-               <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded font-bold">随机属性 (搏一搏)</span>
+               <span className="bg-red-100 text-red-600 text-xs lg:text-sm px-2 py-1 lg:px-3 lg:py-1.5 rounded font-bold">随机属性 (搏一搏)</span>
             </div>
             
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 transition-opacity duration-300 ${isRolling ? 'opacity-50' : 'opacity-100'}`}>
+            <div className={`grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 transition-opacity duration-300 ${isRolling ? 'opacity-50' : 'opacity-100'}`}>
               <SimpleStatBar icon="😎" label="面子" value={currentStats.face} color="orange" />
               <SimpleStatBar icon="🧠" label="San值" value={currentStats.san} color="purple" />
               <SimpleStatBar icon="❤️" label="健康" value={currentStats.health} color="red" />
@@ -96,41 +97,43 @@ export const AttributeAdjustment: React.FC<Props> = ({ character, currentStats, 
           </div>
         </div>
 
-        {/* Actions */}
-        <div className="mt-8 flex items-center justify-between gap-4">
-           <button 
-            onClick={onBack}
-            className="px-6 py-3 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold flex items-center shadow-sm transition-colors"
-          >
-            <ArrowLeft size={18} className="mr-2" /> 返回
-          </button>
-          
-          <button 
-            onClick={handleRoll}
-            disabled={isRolling}
-            className="px-6 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-400 hover:to-yellow-400 text-white font-bold flex items-center shadow-lg transition-transform active:scale-95 disabled:opacity-50"
-          >
-            <Dices size={18} className={`mr-2 ${isRolling ? 'animate-spin' : ''}`} /> 搏一搏
-          </button>
+        {/* Actions - Larger buttons */}
+        <div className="mt-8 lg:mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 lg:gap-6">
+           <div className="flex w-full sm:w-auto gap-4">
+             <button 
+              onClick={onBack}
+              className="flex-1 sm:flex-none px-6 py-3 lg:px-8 lg:py-4 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold flex items-center justify-center shadow-sm transition-colors text-sm lg:text-base"
+            >
+              <ArrowLeft size={18} className="mr-2 lg:w-6 lg:h-6" /> 返回
+            </button>
+            
+            <button 
+              onClick={handleRoll}
+              disabled={isRolling}
+              className="flex-1 sm:flex-none px-6 py-3 lg:px-8 lg:py-4 rounded-xl bg-gradient-to-r from-orange-500 to-yellow-500 hover:from-orange-400 hover:to-yellow-400 text-white font-bold flex items-center justify-center shadow-lg transition-transform active:scale-95 disabled:opacity-50 text-sm lg:text-base"
+            >
+              <Dices size={18} className={`mr-2 lg:w-6 lg:h-6 ${isRolling ? 'animate-spin' : ''}`} /> 搏一搏
+            </button>
+           </div>
 
           <button 
             onClick={onStartGame}
-            className="flex-1 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-3 rounded-xl shadow-lg border-b-4 border-red-800 active:border-b-0 active:translate-y-1 transition-all flex items-center justify-center"
+            className="w-full sm:flex-1 bg-gradient-to-r from-red-600 to-red-500 hover:from-red-500 hover:to-red-400 text-white font-bold py-3 lg:py-4 rounded-xl shadow-lg border-b-4 border-red-800 active:border-b-0 active:translate-y-1 transition-all flex items-center justify-center text-base lg:text-xl"
           >
-            开始游戏 <Gamepad2 size={20} className="ml-2" />
+            开始游戏 <Gamepad2 size={20} className="ml-2 lg:w-6 lg:h-6" />
           </button>
         </div>
 
       </div>
 
-      <div className="text-yellow-500/50 text-xs mt-8">
+      <div className="text-yellow-500/50 text-xs lg:text-sm mt-8">
            — 属性会影响你的春节体验和结局 —
       </div>
     </div>
   );
 };
 
-// Helper for this specific screen's light theme stats
+// Helper for this specific screen's light theme stats - Scaled for large screens
 const SimpleStatBar: React.FC<{icon: string, label: string, value: number, color: string}> = ({ icon, label, value, color }) => {
   const getBg = () => {
     switch(color) {
@@ -173,15 +176,15 @@ const SimpleStatBar: React.FC<{icon: string, label: string, value: number, color
   const percent = Math.min((value / 100) * 100, 100);
 
   return (
-    <div className={`${getBg()} ${getBorder()} border p-4 rounded-xl flex items-center justify-between`}>
-      <div className="flex items-center space-x-2 w-20">
-        <span>{icon}</span>
-        <span className="text-gray-600 font-medium">{label}</span>
+    <div className={`${getBg()} ${getBorder()} border p-4 lg:p-6 rounded-xl flex items-center justify-between h-full`}>
+      <div className="flex items-center space-x-2 w-20 lg:w-28">
+        <span className="text-lg lg:text-2xl">{icon}</span>
+        <span className="text-gray-600 font-medium text-sm lg:text-lg">{label}</span>
       </div>
-      <div className="flex-1 mx-4 h-2 bg-gray-200 rounded-full overflow-hidden">
+      <div className="flex-1 mx-4 h-2 lg:h-4 bg-gray-200 rounded-full overflow-hidden">
         <div className={`h-full ${getBar()} rounded-full transition-all duration-500`} style={{ width: `${percent}%` }}></div>
       </div>
-      <span className={`text-xl font-bold ${getText()}`}>{value}</span>
+      <span className={`text-xl lg:text-3xl font-bold ${getText()}`}>{value}</span>
     </div>
   );
 }

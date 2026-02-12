@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useRef } from 'react';
 import { ArrowLeft, Lock, Trophy } from 'lucide-react';
 import { Achievement } from '../types';
 
@@ -9,12 +10,24 @@ interface Props {
 }
 
 export const AchievementScreen: React.FC<Props> = ({ achievements, unlockedIds, onBack }) => {
-  
-  // Dummy Locked Achievements to fill the grid for visual reference
-  const dummyLocked = [1, 2, 3]; 
+  const [holdingId, setHoldingId] = useState<string | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handlePressStart = (id: string) => {
+    timerRef.current = setTimeout(() => {
+      setHoldingId(id);
+    }, 300); // 300ms delay for long press feel
+  };
+
+  const handlePressEnd = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    setHoldingId(null);
+  };
 
   return (
-    <div className="min-h-screen bg-festive-dark flex flex-col items-center p-4 md:p-8 relative">
+    <div className="min-h-screen bg-festive-dark flex flex-col items-center p-4 md:p-8 relative select-none">
       
       {/* Fixed Back Button */}
       <button 
@@ -34,10 +47,10 @@ export const AchievementScreen: React.FC<Props> = ({ achievements, unlockedIds, 
            <Trophy size={48} className="text-yellow-400" />
            <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">春节成就墙</h1>
         </div>
-        <p className="text-yellow-200/80 text-sm">完成不同的春节体验，解锁专属成就徽章</p>
+        <p className="text-yellow-200/80 text-sm">长按已解锁的成就，查看达成条件</p>
         
         <div className="bg-black/30 inline-block px-4 py-1 rounded-full text-xs text-yellow-500 border border-yellow-500/30">
-          已解锁 {unlockedIds.length} / {achievements.length + dummyLocked.length * 3}
+          已解锁 {unlockedIds.length} / {achievements.length}
         </div>
       </div>
 
@@ -47,23 +60,31 @@ export const AchievementScreen: React.FC<Props> = ({ achievements, unlockedIds, 
         {/* Render Real Achievements */}
         {achievements.map((achievement) => {
           const isUnlocked = unlockedIds.includes(achievement.id);
+          const isHolding = holdingId === achievement.id;
           
           return (
             <div 
               key={achievement.id}
+              onMouseDown={() => isUnlocked && handlePressStart(achievement.id)}
+              onMouseUp={handlePressEnd}
+              onMouseLeave={handlePressEnd}
+              onTouchStart={() => isUnlocked && handlePressStart(achievement.id)}
+              onTouchEnd={handlePressEnd}
+              onContextMenu={(e) => e.preventDefault()} // Prevent right-click menu on mobile
               className={`
-                relative rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 border-2
+                relative rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 border-2 cursor-pointer
                 ${isUnlocked 
                   ? 'bg-[#FFF5E6] border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.3)] scale-100' 
                   : 'bg-white/5 border-white/10 blur-[1px] opacity-70 scale-95'
                 }
+                ${isHolding ? 'scale-105 ring-4 ring-yellow-200' : ''}
               `}
             >
               <div className="w-24 h-24 mb-4 relative">
                 <img 
                    src={achievement.icon} 
                    alt={achievement.title} 
-                   className={`w-full h-full object-contain ${!isUnlocked ? 'grayscale brightness-50 contrast-125' : ''}`}
+                   className={`w-full h-full object-contain pointer-events-none ${!isUnlocked ? 'grayscale brightness-50 contrast-125' : ''}`}
                 />
                 {!isUnlocked && (
                   <div className="absolute inset-0 flex items-center justify-center text-white/50">
@@ -76,32 +97,28 @@ export const AchievementScreen: React.FC<Props> = ({ achievements, unlockedIds, 
                 {isUnlocked ? achievement.title : '???'}
               </h3>
               
-              <p className={`text-sm mb-4 min-h-[40px] ${isUnlocked ? 'text-gray-600' : 'text-gray-500'}`}>
-                {isUnlocked ? achievement.quote : '继续探索春节故事解锁更多成就'}
-              </p>
+              <div className={`text-sm mb-4 min-h-[60px] flex items-center justify-center`}>
+                {isUnlocked ? (
+                  isHolding ? (
+                    <span className="text-red-600 font-bold bg-yellow-100 px-2 py-1 rounded animate-pulse">
+                      条件：{achievement.conditionDescription}
+                    </span>
+                  ) : (
+                    <span className="text-gray-600 italic">"{achievement.quote}"</span>
+                  )
+                ) : (
+                  <span className="text-gray-500">继续探索春节故事解锁更多成就</span>
+                )}
+              </div>
 
               <div className={`w-full py-2 border-t ${isUnlocked ? 'border-yellow-200' : 'border-white/10'}`}>
                  <span className={`text-xs font-bold ${isUnlocked ? 'text-green-600' : 'text-gray-500'}`}>
-                   {isUnlocked ? '✔ 已解锁' : '未解锁'}
+                   {isUnlocked ? '✔ 已解锁 (长按查看)' : '未解锁'}
                  </span>
               </div>
             </div>
           );
         })}
-
-        {/* Render Dummy Locked Slots */}
-        {[...Array(6)].map((_, i) => (
-           <div 
-              key={`dummy-${i}`}
-              className="bg-white/5 border-2 border-white/5 rounded-2xl p-6 flex flex-col items-center text-center opacity-40"
-            >
-              <div className="w-24 h-24 mb-4 flex items-center justify-center bg-black/20 rounded-full text-white/30">
-                 <Lock size={40} />
-              </div>
-              <h3 className="text-xl font-bold mb-2 text-gray-500">未解锁</h3>
-              <p className="text-sm mb-4 text-gray-600">继续探索春节故事解锁更多成就</p>
-            </div>
-        ))}
       </div>
 
     </div>

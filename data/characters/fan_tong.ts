@@ -1,3 +1,4 @@
+
 import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
@@ -248,8 +249,8 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '美丽冻人',
-        title: '美丽冻人',
+        text: '帅气冻人',
+        title: '帅气冻人',
         description: '誓死不从，坚持时尚。',
         quote: '你保住了风度，但失去了膝盖。老寒腿进度条+10%。',
         impact: { health: -5, face: 5 }
@@ -284,8 +285,8 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至不想动',
-        title: '甚至不想动',
+        text: '极限憋尿',
+        title: '极限憋尿',
         description: '连上厕所都懒得去，试图憋到天亮。',
         quote: '这是对膀胱的极限挑战。大学生特种兵精神用错了地方。',
         impact: { health: -2, san: -2 }
@@ -429,8 +430,8 @@ export const fanTongEvents: GameEvent[] = [
       },
       {
         id: 'B',
-        text: '甚至不洗澡',
-        title: '甚至不洗澡',
+        text: '省略洗漱',
+        title: '省略洗漱',
         description: '太累了，直接睡。',
         quote: '反正明天不出门，脏点怎么了？',
         impact: { face: -5, health: 2 }
@@ -466,8 +467,8 @@ export const fanTongEvents: GameEvent[] = [
       },
       {
         id: 'C',
-        text: '甚至叫错',
-        title: '甚至叫错',
+        text: '叫错辈分',
+        title: '叫错辈分',
         description: '叫错长辈称呼。',
         quote: '把“二舅姥爷”叫成了“大表哥”。场面一度十分赛博朋克。',
         impact: { face: -20, luck: -5 }
@@ -494,16 +495,16 @@ export const fanTongEvents: GameEvent[] = [
       },
       {
         id: 'B',
-        text: '甚至刮油',
-        title: '甚至刮油',
+        text: '喝茶刮油',
+        title: '喝茶刮油',
         description: '只喝茶刮油。',
         quote: '肚子咕咕叫，你在富得流油的春节里体验饥荒。',
         impact: { health: 2, san: -2 }
       },
       {
         id: 'C',
-        text: '甚至是狗',
-        title: '甚至是狗',
+        text: '投喂大黄',
+        title: '投喂大黄',
         description: '偷偷喂狗。',
         quote: '狗吃得比你还开心，并誓死效忠于你。',
         impact: { luck: 5, san: 5 }
@@ -522,8 +523,8 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至撒谎',
-        title: '甚至撒谎',
+        text: '谎报军情',
+        title: '谎报军情',
         description: '“过了过了，都挺好”。',
         quote: '含糊其辞。舅舅看出了你的心虚，露出了看学渣的慈悲笑容。',
         impact: { face: -5, luck: -2 }
@@ -558,16 +559,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至吃药',
-        title: '甚至吃药',
+        text: '嗑消食片',
+        title: '嗑消食片',
         description: '找健胃消食片。',
         quote: '江中牌，家中常备。脆皮大学生连消化系统都是脆的。',
         impact: { health: 3, san: -2 }
       },
       {
         id: 'B',
-        text: '甚至发誓',
-        title: '甚至发誓',
+        text: '口头减肥',
+        title: '口头减肥',
         description: '发誓明天减肥。',
         quote: '这是你第 108 次发誓。上天都听腻了。',
         impact: { san: 2, weight: 0 }
@@ -623,16 +624,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至打嗝',
-        title: '甚至打嗝',
+        text: '豪饮可乐',
+        title: '豪饮可乐',
         description: '表演一口闷可乐。',
         quote: '这就是你的才艺？除了打嗝声很响亮，没有任何技术含量。',
         impact: { face: -5, weight: 1 }
       },
       {
         id: 'B',
-        text: '甚至背书',
-        title: '甚至背书',
+        text: '硬背课文',
+        title: '硬背课文',
         description: '朗诵《我的区长父亲》（误）。',
         quote: '你背了一段课文。空气中弥漫着尴尬的气息，只有奶奶在鼓掌。',
         impact: { face: -10, san: -5 }
@@ -667,16 +668,16 @@ export const fanTongEvents: GameEvent[] = [
       },
       {
         id: 'B',
-        text: '甚至乱炖',
-        title: '甚至乱炖',
+        text: '自制盖饭',
+        title: '自制盖饭',
         description: '做成大乱炖盖浇饭。',
         quote: '卖相极差，味道极佳。这就是猪食的美学。',
         impact: { health: -3, san: 5 }
       },
       {
         id: 'C',
-        text: '甚至作死',
-        title: '甚至作死',
+        text: '顶风外卖',
+        title: '顶风外卖',
         description: '点外卖（作死）。',
         quote: '你在满桌剩菜面前点了炸鸡。妈妈的怒气值蓄力 100%。',
         impact: { money: -30, face: -10 }
@@ -695,8 +696,8 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至不玩手机',
-        title: '甚至不玩手机',
+        text: '弃机休眠',
+        title: '弃机休眠',
         description: '手机扔一边，直接睡死。',
         quote: '这是身体的求救信号。你睡得像个死猪。',
         impact: { health: 5, san: 5 }
@@ -724,24 +725,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至借口',
-        title: '甚至借口',
+        text: '学术借口',
+        title: '学术借口',
         description: '借口“找同学借资料”。',
         quote: '万能理由。只要是关于学习，你就算去火星他们都支持。',
         impact: { face: 5, luck: 2 }
       },
       {
         id: 'B',
-        text: '甚至潜行',
-        title: '甚至潜行',
+        text: '趁乱出逃',
+        title: '趁乱出逃',
         description: '趁乱溜走。',
         quote: '潜行成功。你像个逃犯一样在街上狂奔，自由的气息！',
         impact: { san: 10, face: -5 }
       },
       {
         id: 'C',
-        text: '甚至被抓',
-        title: '甚至被抓',
+        text: '沦为壮丁',
+        title: '沦为壮丁',
         description: '被抓壮丁去买醋。',
         quote: '越狱失败。你被发配到超市，并在那里遇到了不想见的小学同学。',
         impact: { san: -5, luck: -5 }
@@ -796,8 +797,8 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至视奸',
-        title: '甚至视奸',
+        text: '暗中观察',
+        title: '暗中观察',
         description: '潜水视奸，坚决不去。',
         quote: '这是明智的。但你将错过所有八卦，包括谁整容了。',
         impact: { san: 2, face: 0 }
@@ -812,8 +813,8 @@ export const fanTongEvents: GameEvent[] = [
       },
       {
         id: 'C',
-        text: '甚至收到',
-        title: '甚至收到',
+        text: '跟风收到',
+        title: '跟风收到',
         description: '在群里发个“收到”。',
         quote: '你破坏了队形，大家都在发接龙，就你发收到。像个呆子。',
         impact: { face: -5, luck: -2 }
@@ -832,16 +833,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至面膜',
-        title: '甚至面膜',
+        text: '偷敷面膜',
+        title: '偷敷面膜',
         description: '偷用妈妈的面膜急救。',
         quote: '虽然脸大面膜小，但心理安慰拉满。',
         impact: { face: 2, money: 0 }
       },
       {
         id: 'B',
-        text: '甚至演练',
-        title: '甚至演练',
+        text: '镜前演练',
+        title: '镜前演练',
         description: '对着镜子练习“好久不见”。',
         quote: '像个神经病一样练了半小时。结果失眠了。',
         impact: { san: -5, health: -2 }
@@ -861,24 +862,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至偷穿',
-        title: '甚至偷穿',
+        text: '偷穿父装',
+        title: '偷穿父装',
         description: '偷穿老爸的西装。',
         quote: '像个偷穿大人衣服的巨婴，或者卖保险的实习生。',
         impact: { face: -15, luck: -2 }
       },
       {
         id: 'B',
-        text: '甚至极简',
-        title: '甚至极简',
+        text: '卫衣摆烂',
+        title: '卫衣摆烂',
         description: '极简风：卫衣+牛仔裤。',
         quote: '这就叫松弛感（其实是穷）。只要你不尴尬，尴尬的就是别人。',
         impact: { face: 0, san: 5 }
       },
       {
         id: 'C',
-        text: '甚至洗头',
-        title: '甚至洗头',
+        text: '洗头造型',
+        title: '洗头造型',
         description: '洗头，吹个造型。',
         quote: '洗头是对聚会最高的尊重。虽然发际线有点危险。',
         impact: { face: 5, luck: 2 }
@@ -897,24 +898,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至回本',
-        title: '甚至回本',
+        text: '专注干饭',
+        title: '专注干饭',
         description: '埋头苦吃，吃回本。',
         quote: '你们吹你们的牛，我吃我的肉。在这场战役中，只有你的胃是赢家。',
         impact: { weight: 3, san: 5 }
       },
       {
         id: 'B',
-        text: '甚至捧哏',
-        title: '甚至捧哏',
+        text: '职业捧哏',
+        title: '职业捧哏',
         description: '附和班长：“啊对，您太强了”。',
         quote: '完美的捧哏。班长很受用，决定这顿饭少收你 10 块钱。',
         impact: { money: 10, face: -2 }
       },
       {
         id: 'C',
-        text: '甚至冬眠',
-        title: '甚至冬眠',
+        text: '胡扯科研',
+        title: '胡扯科研',
         description: '被问现状：“我在做人体冬眠研究”。',
         quote: '其实就是天天在宿舍睡觉。大家觉得你深不可测。',
         impact: { face: 10, luck: -2 }
@@ -933,24 +934,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至含泪',
-        title: '甚至含泪',
+        text: '忍痛支付',
+        title: '忍痛支付',
         description: '含泪转账。',
         quote: '你的小金库遭到了降维打击。接下来只能吃土了。',
         impact: { money: -200, san: -10 }
       },
       {
         id: 'B',
-        text: '甚至拖延',
-        title: '甚至拖延',
+        text: '假装断网',
+        title: '假装断网',
         description: '假装信号不好，晚点给。',
         quote: '拖延战术。但这只能延缓死亡，并让你在群里的信用分归零。',
         impact: { face: -15, luck: -5 }
       },
       {
         id: 'C',
-        text: '甚至抢包',
-        title: '甚至抢包',
+        text: '光速抢包',
+        title: '光速抢包',
         description: '抢个红包回血。',
         quote: '你在群里抢到了班长发的 0.5 元红包。杯水车薪，但聊胜于无。',
         impact: { money: 0.5, face: -5 }
@@ -969,16 +970,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至退群',
-        title: '甚至退群',
+        text: '屏蔽消息',
+        title: '屏蔽消息',
         description: '屏蔽群消息，眼不见为净。',
         quote: '热闹是他们的，我什么都没有，除了 0.5 元红包。',
         impact: { san: 5 }
       },
       {
         id: 'B',
-        text: '甚至复盘',
-        title: '甚至复盘',
+        text: '尴尬复盘',
+        title: '尴尬复盘',
         description: '躺在床上回味刚才没发挥好的吵架/吹牛片段。',
         quote: '如果当时我这么说，一定能震慑全场。可惜没如果。',
         impact: { san: -10, health: -2 }
@@ -998,24 +999,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至躺平',
-        title: '甚至躺平',
+        text: '赖床到底',
+        title: '赖床到底',
         description: '赖床到中午 12 点。',
         quote: '与床融为一体。妈妈已经放弃喊你，直接把饭端到了床头（那是给猪的待遇）。',
         impact: { health: -2, face: -5 }
       },
       {
         id: 'B',
-        text: '甚至赶工',
-        title: '甚至赶工',
+        text: '狂补作业',
+        title: '狂补作业',
         description: '疯狂赶没写完的论文/作业。',
         quote: '创造奇迹的时刻。你的键盘冒出了火星，内容全靠编。',
         impact: { san: -15, face: 5 }
       },
       {
         id: 'C',
-        text: '甚至整理',
-        title: '甚至整理',
+        text: '整理行囊',
+        title: '整理行囊',
         description: '收拾心情，整理行李。',
         quote: '看着空荡荡的箱子，你感到一阵空虚。然后发现袜子少了一只。',
         impact: { san: -5, luck: -2 }
@@ -1034,24 +1035,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至抗议',
-        title: '甚至抗议',
+        text: '弱声抗议',
+        title: '弱声抗议',
         description: '“妈，真的装不下了！”',
         quote: '无效抗议。妈妈利用物理法则强行压缩了空间，行李箱发出了惨叫。',
         impact: { face: -2, san: -2 }
       },
       {
         id: 'B',
-        text: '甚至超重',
-        title: '甚至超重',
+        text: '接受超重',
+        title: '接受超重',
         description: '默默接受，准备超重。',
         quote: '你将背负着沉重的爱（物理）踏上旅途。这箱子比你人都重。',
         impact: { weight: 0, health: -5 }
       },
       {
         id: 'C',
-        text: '甚至夹带',
-        title: '甚至夹带',
+        text: '夹带辣条',
+        title: '夹带辣条',
         description: '偷拿几包辣条塞进去。',
         quote: '这是你最后的倔强。返校后的快乐源泉。',
         impact: { money: -10, san: 5 }
@@ -1070,24 +1071,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至打钱',
-        title: '甚至打钱',
+        text: '申请打钱',
+        title: '申请打钱',
         description: '“妈，打钱！”',
         quote: '虽然直接，但有效。你的小金库瞬间充盈。这就是亲情的金钱具象化。',
         impact: { money: 1000, face: -10 }
       },
       {
         id: 'B',
-        text: '甚至感动',
-        title: '甚至感动',
+        text: '默默干饭',
+        title: '默默干饭',
         description: '鼻头一酸，默默吃饭。',
         quote: '有些话在心里。红烧肉真好吃，下次吃要等半年了。',
         impact: { san: -5, face: 5 }
       },
       {
         id: 'C',
-        text: '甚至画饼',
-        title: '甚至画饼',
+        text: '豪言壮语',
+        title: '豪言壮语',
         description: '画饼：“毕业后我养你们”。',
         quote: '父母笑得很开心，虽然他们知道你现在连自己都养不活。',
         impact: { face: 10, san: 5 }
@@ -1106,16 +1107,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至不舍',
-        title: '甚至不舍',
+        text: '巡视全家',
+        title: '巡视全家',
         description: '在家里每个房间转一圈。',
         quote: '像巡视领地的狗。这里虽然吵，但这里是家。',
         impact: { san: -2, luck: 2 }
       },
       {
         id: 'B',
-        text: '甚至兴奋',
-        title: '甚至兴奋',
+        text: '期待自由',
+        title: '期待自由',
         description: '想到回学校没人管了。',
         quote: '自由在召唤！外卖在召唤！通宵在召唤！',
         impact: { san: 10, health: -2 }
@@ -1135,24 +1136,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至装酷',
-        title: '甚至装酷',
+        text: '戴镜装酷',
+        title: '戴镜装酷',
         description: '戴上墨镜，酷酷地挥手。',
         quote: '为了掩饰眼角的湿润。装逼是你最后的防线。',
         impact: { face: 5, san: -5 }
       },
       {
         id: 'B',
-        text: '甚至画心',
-        title: '甚至画心',
+        text: '哈气画心',
+        title: '哈气画心',
         description: '在车窗上哈气画爱心。',
         quote: '土味但温情。妈妈笑了，并在窗外喊着让你穿秋裤。',
         impact: { face: 2, san: 5 }
       },
       {
         id: 'C',
-        text: '甚至逃避',
-        title: '甚至逃避',
+        text: '低头玩机',
+        title: '低头玩机',
         description: '低头玩手机，不敢抬头。',
         quote: '逃避可耻但有用。车开了，你才敢回头看那两个变小的黑点。',
         impact: { face: -5, san: -10 }
@@ -1171,24 +1172,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至搬砖',
-        title: '甚至搬砖',
+        text: '硬搬行李',
+        title: '硬搬行李',
         description: '硬抗行李箱爬楼梯。',
         quote: '脆皮大学生的手臂断裂（夸张）。你觉得自己像个搬砖的。',
         impact: { health: -10, weight: -1 }
       },
       {
         id: 'B',
-        text: '甚至求助',
-        title: '甚至求助',
+        text: '求助路人',
+        title: '求助路人',
         description: '向路人求助。',
         quote: '遇到好心大哥帮忙。人间自有真情在，除了你的箱子真的很重。',
         impact: { luck: 5, face: -2 }
       },
       {
         id: 'C',
-        text: '甚至滑行',
-        title: '甚至滑行',
+        text: '坐箱滑行',
+        title: '坐箱滑行',
         description: '坐在箱子上滑行。',
         quote: '箱子轮子崩飞了一个。现在你是一个只有三个轮子的悲剧。',
         impact: { face: -10, money: -50 }
@@ -1207,24 +1208,24 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至家乡味',
-        title: '甚至家乡味',
+        text: '嚼酱牛肉',
+        title: '嚼酱牛肉',
         description: '打开妈妈带的酱牛肉。',
         quote: '咬一口，满嘴家乡味。春节结束了，生存游戏重新开始。',
         impact: { san: 10, health: 2 }
       },
       {
         id: 'B',
-        text: '甚至称重',
-        title: '甚至称重',
+        text: '上秤称重',
+        title: '上秤称重',
         description: '上秤称体重。',
         quote: '看着那个数字，你发出了杀猪般的惨叫。每逢佳节胖三斤，诚不我欺。',
         impact: { san: -15, weight: 0 }
       },
       {
         id: 'C',
-        text: '甚至立Flag',
-        title: '甚至立Flag',
+        text: '立誓做卷王',
+        title: '立誓做卷王',
         description: '立个Flag：新学期我要做卷王。',
         quote: 'Flag 立起来就是为了倒的。洗洗睡吧，明天早八。',
         impact: { face: 5, luck: -2 }
@@ -1243,16 +1244,16 @@ export const fanTongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至失眠',
-        title: '甚至失眠',
+        text: '认床失眠',
+        title: '认床失眠',
         description: '认床，翻来覆去睡不着。',
         quote: '换了地图，身体还没适应。数羊数到了 5000 只。',
         impact: { health: -2, san: -5 }
       },
       {
         id: 'B',
-        text: '甚至通宵',
-        title: '甚至通宵',
+        text: '通宵启动',
+        title: '通宵启动',
         description: '打开电脑，启动游戏。',
         quote: '没人管了！今晚我是夜之城的主宰！',
         impact: { health: -10, san: 10 }

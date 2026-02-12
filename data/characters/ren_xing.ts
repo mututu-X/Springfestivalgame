@@ -1,3 +1,4 @@
+
 import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
@@ -147,16 +148,16 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至裸睡',
-        title: '甚至裸睡',
+        text: '彻底裸睡',
+        title: '彻底裸睡',
         description: '脱光，释放天性。',
         quote: '反正门锁了，这就是我的绝对领域。',
         impact: { san: 5, health: -2 }
       },
       {
         id: 'B',
-        text: '甚至熬夜',
-        title: '甚至熬夜',
+        text: '报复熬夜',
+        title: '报复熬夜',
         description: '翻看这几天没看的小说。',
         quote: '这是报复性熬夜，是对白天不得不做人的补偿。',
         impact: { san: 5, health: -5 }
@@ -220,8 +221,8 @@ export const renXingEvents: GameEvent[] = [
       },
       {
         id: 'B',
-        text: '甚至碰瓷',
-        title: '甚至碰瓷',
+        text: '假装工伤',
+        title: '假装工伤',
         description: '“爸，这玻璃太高，我这老腰是工伤，算了吧。”',
         quote: '你成功偷懒，父亲一边骂一边自己爬上去擦了。',
         impact: { health: 2, face: -5 }
@@ -248,24 +249,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至捧哏',
-        title: '甚至捧哏',
+        text: '阴阳捧哏',
+        title: '阴阳捧哏',
         description: '陪父母看神剧，并真心点评特效。',
         quote: '你的智商受到了侮辱，但父母觉得你很孝顺。',
         impact: { san: -5, face: 5 }
       },
       {
         id: 'B',
-        text: '甚至冷战',
-        title: '甚至冷战',
+        text: '断绝交流',
+        title: '断绝交流',
         description: '回房间玩手机，断绝物理交流。',
         quote: '逃避可耻但有用。这是属于你的赛博避难所。',
         impact: { san: 5, face: -2 }
       },
       {
         id: 'C',
-        text: '甚至投毒',
-        title: '甚至投毒',
+        text: '强制安利',
+        title: '强制安利',
         description: '强行投屏鬼畜视频：“爸妈，这是现在的潮流文化，学习一下！”',
         quote: '父母看着屏幕上的鬼畜画面陷入沉思，随后没收了遥控器。',
         impact: { san: 15, face: -10 }
@@ -278,22 +279,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '腊月二十九',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至不想睡',
+    title: '深夜亢奋',
     description: '精神抖擞，不想睡觉。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至蹦迪',
-        title: '甚至蹦迪',
+        text: '颅内蹦迪',
+        title: '颅内蹦迪',
         description: '带上耳机，在床上云蹦迪。',
         quote: '床板在震动，灵魂在飞升。',
         impact: { san: 5, health: -2 }
       },
       {
         id: 'B',
-        text: '甚至夜宵',
-        title: '甚至夜宵',
+        text: '生化夜宵',
+        title: '生化夜宵',
         description: '煮一包螺蛳粉。',
         quote: '整个家都弥漫着独特的味道。你妈以为厕所炸了。',
         impact: { weight: 1, face: -5 }
@@ -313,24 +314,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至凡尔赛',
-        title: '甚至凡尔赛',
+        text: '凡尔赛语',
+        title: '凡尔赛语',
         description: '“哎呀，年薪不到百万，也就是混口饭吃。”',
         quote: '你装到了，但代价是接下来几天你要发巨额红包来圆谎。',
         impact: { money: -800, face: 20 }
       },
       {
         id: 'B',
-        text: '甚至借钱',
-        title: '甚至借钱',
+        text: '反手借钱',
+        title: '反手借钱',
         description: '“阿姨借点钱吧，我在外面欠了高利贷，正愁没钱还呢。”',
         quote: '亲戚们瞬间闭嘴，并以光速离开了你家。世界清静了。',
         impact: { san: 20, face: -20 }
       },
       {
         id: 'C',
-        text: '甚至人身攻击',
-        title: '甚至人身攻击',
+        text: '精准毒舌',
+        title: '精准毒舌',
         description: '“二姨，您这双眼皮割得有点不对称啊。”',
         quote: '精准打击！二姨捂着脸走了，你被你妈狠狠掐了一下。',
         impact: { san: 10, health: -2 }
@@ -349,24 +350,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至送礼',
-        title: '甚至送礼',
+        text: '断臂求生',
+        title: '断臂求生',
         description: '“拿去吧，这是哥哥的命...”',
         quote: '你是个好哥哥，但你心在滴血。表弟五分钟后把它摔断了。',
         impact: { money: -500, san: -20 }
       },
       {
         id: 'B',
-        text: '甚至劝学',
-        title: '甚至劝学',
+        text: '魔鬼劝学',
+        title: '魔鬼劝学',
         description: '拿出一套《五年高考三年模拟》：“想要吗？做完这一本就送你。”',
         quote: '表弟尖叫着跑了，你维护了知识的尊严。',
         impact: { san: 10, luck: 5 }
       },
       {
         id: 'C',
-        text: '甚至恐吓',
-        title: '甚至恐吓',
+        text: '灵异恐吓',
+        title: '灵异恐吓',
         description: '告诉他：“这个娃娃晚上会动，还会吃小孩手指头。”',
         quote: '表弟被吓哭了，你被姑姑骂了‘没个正经’，但手办保住了。',
         impact: { san: 15, face: -5 }
@@ -385,24 +386,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至断片',
-        title: '甚至断片',
+        text: '豪饮断片',
+        title: '豪饮断片',
         description: '喝！喝到断片！',
         quote: '你喝吐了，长辈们夸你豪爽。第二天你会后悔出生。',
         impact: { health: -20, face: 10 }
       },
       {
         id: 'B',
-        text: '甚至怀孕',
-        title: '甚至怀孕',
+        text: '硬核借口',
+        title: '硬核借口',
         description: '“我备孕呢。”（无论男女）',
         quote: '全场震惊。这理由太硬核，没人敢劝了，只剩下窃窃私语。',
         impact: { san: 10, face: -10 }
       },
       {
         id: 'C',
-        text: '甚至反杀',
-        title: '甚至反杀',
+        text: '反客为主',
+        title: '反客为主',
         description: '“来！我干了！谁不喝谁孙子！大舅你养鱼呢？”',
         quote: '你反客为主，把长辈们劝怕了。【素质消失术】大成功。',
         impact: { san: 20, health: -5 }
@@ -415,22 +416,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初一',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至做梦',
+    title: '醉后梦呓',
     description: '酒精上头，梦里还在划拳。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至梦话',
-        title: '甚至梦话',
+        text: '梦话连篇',
+        title: '梦话连篇',
         description: '大喊一声“五魁首啊”。',
         quote: '把起夜的你爸吓了一跳。',
         impact: { face: -2 }
       },
       {
         id: 'B',
-        text: '甚至口渴',
-        title: '甚至口渴',
+        text: '起夜找水',
+        title: '起夜找水',
         description: '半夜起来找水喝。',
         quote: '像个游魂一样在客厅游荡。',
         impact: { health: -2 }
@@ -450,24 +451,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至卑微',
-        title: '甚至卑微',
+        text: '虚伪奉承',
+        title: '虚伪奉承',
         description: '全程陪笑，点头哈腰。',
         quote: '你成了背景板，衬托了红花的鲜艳。由于过于卑微，SAN 值狂掉。',
         impact: { san: -15, face: -5 }
       },
       {
         id: 'B',
-        text: '甚至拆台',
-        title: '甚至拆台',
+        text: '无情拆台',
+        title: '无情拆台',
         description: '“听说这岗位天天加班还没加班费，真的吗？”',
         quote: '哪壶不开提哪壶。对方笑容凝固，王阿姨觉得你嫉妒心重。',
         impact: { san: 5, face: -10 }
       },
       {
         id: 'C',
-        text: '甚至结拜',
-        title: '甚至结拜',
+        text: '当场结拜',
+        title: '当场结拜',
         description: '“以后犯了事就靠兄弟你捞我了！”',
         quote: '成功把对方拉下水。王阿姨拉着儿子赶紧跑了，生怕沾上晦气。',
         impact: { san: 10, face: -20 }
@@ -486,24 +487,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至正常',
-        title: '甚至正常',
+        text: '无效社交',
+        title: '无效社交',
         description: '正常交流，互通有无。',
         quote: '平平淡淡，你们加了微信然后互躺尸体列表。',
         impact: { money: -50, face: 5 }
       },
       {
         id: 'B',
-        text: '甚至演戏',
-        title: '甚至演戏',
+        text: '戏精附体',
+        title: '戏精附体',
         description: '“你好，我是不婚主义者，咱俩凑合演个戏？”',
         quote: '对方眼中有了光，你们愉快地打了一下午王者荣耀。',
         impact: { san: 10, money: 0 }
       },
       {
         id: 'C',
-        text: '甚至推销',
-        title: '甚至推销',
+        text: '硬核推销',
+        title: '硬核推销',
         description: '“了解一下安利吗？或者是我的保险业务？”',
         quote: '对方落荒而逃。你妈接到介绍人电话，说你脑子是不是有坑。',
         impact: { san: 20, face: -10 }
@@ -522,24 +523,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至输钱',
-        title: '甚至输钱',
+        text: '散财童子',
+        title: '散财童子',
         description: '故意点炮，输钱买开心。',
         quote: '长辈们赢钱了夸你懂事，你钱包瘪了但家庭地位暂时上升。',
         impact: { money: -500, face: 10 }
       },
       {
         id: 'B',
-        text: '甚至六亲不认',
-        title: '甚至六亲不认',
+        text: '冷血雀神',
+        title: '冷血雀神',
         description: '六亲不认，算牌狂魔。',
         quote: '你赢光了三姑的买菜钱。气氛很尴尬，但钱很香。',
         impact: { money: 300, face: -15 }
       },
       {
         id: 'C',
-        text: '甚至做法',
-        title: '甚至做法',
+        text: '当场做法',
+        title: '当场做法',
         description: '边打边做法：“天灵灵地灵灵，把你们的钱都吸过来！”',
         quote: '你的精神攻击干扰了他们的牌运。牌局不欢而散。',
         impact: { san: 10, face: -15 }
@@ -552,22 +553,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初二',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至数钱',
+    title: '深夜盘点',
     description: '赢了钱/输了钱睡不着。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至数钱',
-        title: '甚至数钱',
+        text: '数钱取乐',
+        title: '数钱取乐',
         description: '反复数那赢来的 300 块。',
         quote: '这是凭本事赢的，不丢人。睡着了嘴都是咧着的。',
         impact: { san: 5 }
       },
       {
         id: 'B',
-        text: '甚至复盘',
-        title: '甚至复盘',
+        text: '痛苦复盘',
+        title: '痛苦复盘',
         description: '后悔刚才那一手牌打错了。',
         quote: '越想越气，给了自己一巴掌。',
         impact: { san: -5, health: -1 }
@@ -587,24 +588,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至虔诚',
-        title: '甚至虔诚',
+        text: '敷衍了事',
+        title: '敷衍了事',
         description: '虔诚磕头，心里默念代码。',
         quote: '中规中矩，祖宗收到了你的头，没收到你的诚意。',
         impact: { face: 5, san: -2 }
       },
       {
         id: 'B',
-        text: '甚至烧币',
-        title: '甚至烧币',
+        text: '赛博烧纸',
+        title: '赛博烧纸',
         description: '“爷爷，下面通货膨胀厉害吗？给您烧点比特帀？”',
         quote: '你爸觉得你大逆不道，但你觉得这才叫与时俱进。',
         impact: { san: 10, face: -10 }
       },
       {
         id: 'C',
-        text: '甚至演技',
-        title: '甚至演技',
+        text: '演技爆发',
+        title: '演技爆发',
         description: '被烟熏得流泪，假装感动大哭。',
         quote: '全家族都夸你是个孝子，只有你知道是被 PM2.5 呛的。',
         impact: { face: 15, health: -2 }
@@ -623,24 +624,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至铁胃',
-        title: '甚至铁胃',
+        text: '铁胃挑战',
+        title: '铁胃挑战',
         description: '闭眼吞咽，铁胃无敌。',
         quote: '你吃下了一周份的致癌物，获得了母亲的欣慰笑容。',
         impact: { health: -10, face: 2 }
       },
       {
         id: 'B',
-        text: '甚至作弊',
-        title: '甚至作弊',
+        text: '外卖作弊',
+        title: '外卖作弊',
         description: '偷偷点外卖，假装在吃剩菜。',
         quote: '虽然有点费钱，但保住了狗命。就是藏外卖包装盒有点累。',
         impact: { money: -50, health: 5 }
       },
       {
         id: 'C',
-        text: '甚至科普',
-        title: '甚至科普',
+        text: '致命说教',
+        title: '致命说教',
         description: '“妈，这菜里的亚硝酸盐能腌死一头猪了。”',
         quote: '你妈骂你‘书读到狗肚子里了’，然后当你面把菜吃了。',
         impact: { san: 5, face: -5 }
@@ -659,24 +660,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至冷暴力',
-        title: '甚至冷暴力',
+        text: '彻底沉默',
+        title: '彻底沉默',
         description: '沉默是金，左耳进右耳出。',
         quote: '冷暴力处理。家里气氛压抑得像即将下雨。',
         impact: { san: -5, face: -2 }
       },
       {
         id: 'B',
-        text: '甚至出柜',
-        title: '甚至出柜',
+        text: '纸片恋人',
+        title: '纸片恋人',
         description: '“爸，妈，其实我喜欢...纸片人。”',
         quote: '拿出了二次元老婆的照片。父母彻底绝望，决定放弃治疗你。',
         impact: { san: 15, face: -20 }
       },
       {
         id: 'C',
-        text: '甚至开价',
-        title: '甚至开价',
+        text: '坐地起价',
+        title: '坐地起价',
         description: '“给我五百万买房，我明天就结婚。”',
         quote: '以经济基础击碎上层建筑。父母沉默了，因为真没钱。',
         impact: { san: 10, money: 0 }
@@ -689,22 +690,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初三',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至反思',
+    title: '深夜反省',
     description: '怼了父母一天。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至愧疚',
-        title: '甚至愧疚',
+        text: '一丝愧疚',
+        title: '一丝愧疚',
         description: '想去道个歉，但拉不下脸。',
         quote: '在门口转了两圈，最后去尿了个尿。',
         impact: { san: -5 }
       },
       {
         id: 'B',
-        text: '甚至坚定',
-        title: '甚至坚定',
+        text: '死不悔改',
+        title: '死不悔改',
         description: '我没错，错的是这个世界。',
         quote: '如果不发疯，早就被逼疯了。继续保持。',
         impact: { san: 5 }
@@ -724,24 +725,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至正当',
-        title: '甚至正当',
+        text: '系统崩溃',
+        title: '系统崩溃',
         description: '“公司服务器炸了，我得去网吧修 BUG！”',
         quote: '这理由很正当。你在网吧开了一上午黑，爽翻了。',
         impact: { san: 15, money: -20 }
       },
       {
         id: 'B',
-        text: '甚至奶茶',
-        title: '甚至奶茶',
+        text: '奶茶续命',
+        title: '奶茶续命',
         description: '假装去散步，实则去买奶茶。',
         quote: '高糖分摄入让你找回了活着的感觉。',
         impact: { weight: 1, san: 10 }
       },
       {
         id: 'C',
-        text: '甚至直球',
-        title: '甚至直球',
+        text: '直球对决',
+        title: '直球对决',
         description: '“这地儿我待不下去了，我要出去透气。”',
         quote: '诚实是种美德，但会挨骂。你妈骂你‘家是旅馆吗’。',
         impact: { face: -10, san: 5 }
@@ -760,24 +761,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至路人',
-        title: '甚至路人',
+        text: '路人模式',
+        title: '路人模式',
         description: '假装没看见，低头看手机快步走过。',
         quote: '只要我不尴尬，青春就还在。保留美好回忆（假象）就好。',
         impact: { san: 5, face: 0 }
       },
       {
         id: 'B',
-        text: '甚至嘴贱',
-        title: '甚至嘴贱',
+        text: '恶语相向',
+        title: '恶语相向',
         description: '上前搭讪：“哟，这谁啊，这么福态了？”',
         quote: '你亲手摧毁了对方的尊严，也摧毁了自己的回忆。这就是发疯的快感。',
         impact: { san: 10, face: -10 }
       },
       {
         id: 'C',
-        text: '甚至虚伪',
-        title: '甚至虚伪',
+        text: '假意寒暄',
+        title: '假意寒暄',
         description: '礼貌寒暄，互加微信（然后屏蔽）。',
         quote: '成年人的虚伪社交。你发现他/她朋友圈全是微商广告。',
         impact: { face: 5, san: -5 }
@@ -796,24 +797,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至负能量',
-        title: '甚至负能量',
+        text: '疯狂吐槽',
+        title: '疯狂吐槽',
         description: '疯狂吐槽，释放负能量。',
         quote: '你们互相舔舐伤口，感觉 SAN 值回满。这是真正的春节。',
         impact: { san: 20, health: -5 }
       },
       {
         id: 'B',
-        text: '甚至装逼',
-        title: '甚至装逼',
+        text: '抢着买单',
+        title: '抢着买单',
         description: '抢着买单，装个小逼。',
         quote: '虽然钱包痛，但那一声‘义父’让你迷失了自我。',
         impact: { money: -500, face: 20 }
       },
       {
         id: 'C',
-        text: '甚至创业',
-        title: '甚至创业',
+        text: '怂恿创业',
+        title: '怂恿创业',
         description: '劝大家：“都不容易，来，不如我们集体辞职创业？”',
         quote: '大家像看傻子一样看你，然后继续喝廉价啤酒。',
         impact: { luck: -10, face: -5 }
@@ -826,22 +827,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初四',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至宿醉',
+    title: '酩酊大醉',
     description: '喝到了凌晨。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至不洗脸',
-        title: '甚至不洗脸',
+        text: '倒头就睡',
+        title: '倒头就睡',
         description: '直接倒在床上。',
         quote: '明天枕头会很精彩，但管他呢。',
         impact: { face: -5, health: -2 }
       },
       {
         id: 'B',
-        text: '甚至夜谈',
-        title: '甚至夜谈',
+        text: '对狗谈心',
+        title: '对狗谈心',
         description: '拉着还没睡的狗聊了一个小时天。',
         quote: '狗都困了，你还精神。',
         impact: { san: 5, health: -2 }
@@ -861,24 +862,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至巨婴',
-        title: '甚至巨婴',
+        text: '退化巨婴',
+        title: '退化巨婴',
         description: '瘫痪在床，叫妈倒水。',
         quote: '被骂‘懒猪’，但喝到了温水。退化成巨婴挺舒服的。',
         impact: { health: 5, face: -5 }
       },
       {
         id: 'B',
-        text: '甚至行尸',
-        title: '甚至行尸',
+        text: '垂死挣扎',
+        title: '垂死挣扎',
         description: '强撑起床，展示意志力。',
         quote: '你像个行尸走肉一样飘荡在家里，差点撞门框上。',
         impact: { health: -10, san: -5 }
       },
       {
         id: 'C',
-        text: '甚至发圈',
-        title: '甚至发圈',
+        text: '痛斥春节',
+        title: '痛斥春节',
         description: '发朋友圈：“春节，一场以爱为名的集体绑架。”',
         quote: '获得了 3 个赞，屏蔽了父母。你觉得很酷。',
         impact: { san: 10, luck: -2 }
@@ -897,24 +898,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至盛装',
-        title: '甚至盛装',
+        text: '盛装出席',
+        title: '盛装出席',
         description: '去！还要盛装出席！',
         quote: '你花钱做了头发，准备去见证人类虚荣心的巅峰。',
         impact: { money: -200, face: 5 }
       },
       {
         id: 'B',
-        text: '甚至退群',
-        title: '甚至退群',
+        text: '当场退群',
+        title: '当场退群',
         description: '不去，直接退群。',
         quote: '只要我没有道德，你就绑架不了我。爽！',
         impact: { san: 20, face: -20 }
       },
       {
         id: 'C',
-        text: '甚至AA',
-        title: '甚至AA',
+        text: '提议AA',
+        title: '提议AA',
         description: '群里回复：“AA吗？人均超过 50 我不去啊。”',
         quote: '群里瞬间冷场。你凭一己之力拉低了聚会的格调。你是英雄。',
         impact: { face: -30, san: 15 }
@@ -933,24 +934,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至打包',
-        title: '甚至打包',
+        text: '疯狂打包',
+        title: '疯狂打包',
         description: '默默干饭，打包剩菜。',
         quote: '只要我脸皮厚，这顿就是自助餐。这波不亏。',
         impact: { money: 20, face: -20 }
       },
       {
         id: 'B',
-        text: '甚至捧杀',
-        title: '甚至捧杀',
+        text: '虚伪捧杀',
+        title: '虚伪捧杀',
         description: '配合演出：“哇！王总真厉害！李总带带我！”',
         quote: '你出卖了灵魂，换来了所谓的‘人脉’（其实并没有卵用）。',
         impact: { san: -15, luck: 5 }
       },
       {
         id: 'C',
-        text: '甚至拆穿',
-        title: '甚至拆穿',
+        text: '当众拆穿',
+        title: '当众拆穿',
         description: '当众拆穿：“张总，听说你那大奔是租的？一天多少钱？”',
         quote: '全场死寂。【素质消失术】终极奥义。你成为了聚会终结者。',
         impact: { san: 30, face: -50 }
@@ -963,22 +964,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初五',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至拉黑',
+    title: '社交清理',
     description: '聚会结束，班长发了假惺惺的合照。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至举报',
-        title: '甚至举报',
+        text: '正义执行',
+        title: '正义执行',
         description: '举报群聊有违规内容。',
         quote: '我是正义的化身。',
         impact: { san: 5, luck: 2 }
       },
       {
         id: 'B',
-        text: '甚至无视',
-        title: '甚至无视',
+        text: '彻底无视',
+        title: '彻底无视',
         description: '设置消息免打扰，睡觉。',
         quote: '你们演你们的，我睡我的。',
         impact: { health: 2 }
@@ -998,24 +999,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至冤种',
-        title: '甚至冤种',
+        text: '冤种采购',
+        title: '冤种采购',
         description: '老实买买买。',
         quote: '花了冤枉钱，买了个心安。同事们估计转手就扔了。',
         impact: { money: -300, san: -2 }
       },
       {
         id: 'B',
-        text: '甚至土豆',
-        title: '甚至土豆',
+        text: '土豆充数',
+        title: '土豆充数',
         description: '去菜市场买两斤土豆。',
         quote: '“这是正宗老家笨土豆！”这理由无懈可击，还省钱。',
         impact: { money: -10, face: -5 }
       },
       {
         id: 'C',
-        text: '甚至网购',
-        title: '甚至网购',
+        text: '聪明网购',
+        title: '聪明网购',
         description: '网购下单直接寄到公司。',
         quote: '这是现代智慧。没人知道你没在当地买，除了快递单。',
         impact: { money: -100, luck: 5 }
@@ -1034,24 +1035,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至敷衍',
-        title: '甚至敷衍',
+        text: '敷衍三连',
+        title: '敷衍三连',
         description: '“好好好，是是是，对对对”。',
         quote: '经典的‘敷衍三连’。虽然没听进去，但这是为了世界和平。',
         impact: { san: -5, face: 5 }
       },
       {
         id: 'B',
-        text: '甚至画饼',
-        title: '甚至画饼',
+        text: '反向画饼',
+        title: '反向画饼',
         description: '反向画饼：“明年一定带个亿万富翁回来！”',
         quote: '只要饼画得够大，父母就吃不下。他们觉得你在做梦。',
         impact: { san: 10, face: -5 }
       },
       {
         id: 'C',
-        text: '甚至屏蔽',
-        title: '甚至屏蔽',
+        text: '物理屏蔽',
+        title: '物理屏蔽',
         description: '带上耳机，物理屏蔽。',
         quote: '父母看着像在演默剧的你，叹了口气，放弃了。',
         impact: { face: -10, san: 5 }
@@ -1070,24 +1071,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至硬塞',
-        title: '甚至硬塞',
+        text: '泰山压顶',
+        title: '泰山压顶',
         description: '拼命塞，坐上去压。',
         quote: '箱子拉链发出了惨叫，但你带走了沉甸甸的母爱（负担）。',
         impact: { health: -2, weight: 5 }
       },
       {
         id: 'B',
-        text: '甚至拒绝',
-        title: '甚至拒绝',
+        text: '严词拒绝',
+        title: '严词拒绝',
         description: '坚决不要：“妈，大城市有超市，我不是去荒野求生！”',
         quote: '你妈觉得你不知道柴米油盐贵，偷偷塞你包里两个煮鸡蛋。',
         impact: { face: -5, san: 5 }
       },
       {
         id: 'C',
-        text: '甚至快递',
-        title: '甚至快递',
+        text: '快递解忧',
+        title: '快递解忧',
         description: '提议快递寄过去。',
         quote: '用金钱换空间。双赢。',
         impact: { money: -50, luck: 5 }
@@ -1100,22 +1101,22 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初六',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '甚至舍不得',
+    title: '离愁别绪',
     description: '明天就要走了。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '甚至偷拍',
-        title: '甚至偷拍',
+        text: '偷拍留念',
+        title: '偷拍留念',
         description: '偷拍一张家里的照片。',
         quote: '留个纪念，下次回来不知道什么时候。',
         impact: { san: -2, luck: 2 }
       },
       {
         id: 'B',
-        text: '甚至期待',
-        title: '甚至期待',
+        text: '渴望外卖',
+        title: '渴望外卖',
         description: '期待回大城市点外卖。',
         quote: '家乡很好，但外卖更好。',
         impact: { san: 5, health: -1 }
@@ -1135,24 +1136,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至温情',
-        title: '甚至温情',
+        text: '深情拥抱',
+        title: '深情拥抱',
         description: '拥抱父母：“走了啊，照顾好身体。”',
         quote: '短暂的温情。你看到老妈偷偷抹了眼泪。唉，这就是羁绊。',
         impact: { san: 10, face: 5 }
       },
       {
         id: 'B',
-        text: '甚至潇洒',
-        title: '甚至潇洒',
+        text: '潇洒转身',
+        title: '潇洒转身',
         description: '挥手不回头：“我去为 GDP 做贡献了！”',
         quote: '潇洒离去。真男人从不回头看爆炸（泪水）。',
         impact: { san: 5, luck: 5 }
       },
       {
         id: 'C',
-        text: '甚至实用',
-        title: '甚至实用',
+        text: '清点物资',
+        title: '清点物资',
         description: '检查有没有落东西，无视煽情。',
         quote: '实用主义者。你确认了身份证在，就放心了。',
         impact: { face: -5, luck: 2 }
@@ -1171,24 +1172,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至社畜',
-        title: '甚至社畜',
+        text: '提前复工',
+        title: '提前复工',
         description: '打开工作群，提前进入状态。',
         quote: '看着 99+ 的消息，你想跳车。社畜模式加载中...',
         impact: { san: -20, money: 100 }
       },
       {
         id: 'B',
-        text: '甚至补觉',
-        title: '甚至补觉',
+        text: '补觉续命',
+        title: '补觉续命',
         description: '补觉，逃避现实。',
         quote: '能睡一分钟是一分钟。梦里没有 KPI。',
         impact: { health: 5, san: 5 }
       },
       {
         id: 'C',
-        text: '甚至算账',
-        title: '甚至算账',
+        text: '痛苦算账',
+        title: '痛苦算账',
         description: '算账：这趟回家花了多少钱。',
         quote: '看着账单，你觉得自己这几天是在‘精准扶贫’。心痛。',
         impact: { san: -10, money: 0 }
@@ -1207,24 +1208,24 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至发圈',
-        title: '甚至发圈',
+        text: '回归宣言',
+        title: '回归宣言',
         description: '发朋友圈：“已回村（城），工位见。”',
         quote: '春节副本通关。游戏结束，生活继续。',
         impact: { face: 5, luck: 2 }
       },
       {
         id: 'B',
-        text: '甚至喊楼',
-        title: '甚至喊楼',
+        text: '放飞自我',
+        title: '放飞自我',
         description: '大喊一声：“老子又是这条街最靓的仔！”',
         quote: '隔壁邻居敲墙骂你神经病。这熟悉的感觉，回来了。',
         impact: { san: 15, face: -5 }
       },
       {
         id: 'C',
-        text: '甚至睡觉',
-        title: '甚至睡觉',
+        text: '倒头大睡',
+        title: '倒头大睡',
         description: '定好明天闹钟，倒头就睡。',
         quote: '你是成熟的打工人。晚安，赛博世界。',
         impact: { health: 5, san: 5 }
@@ -1243,16 +1244,16 @@ export const renXingEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至期待',
-        title: '甚至期待',
+        text: '期待红包',
+        title: '期待红包',
         description: '期待明天的开工红包。',
         quote: '苍蝇腿也是肉。为了钱，忍了。',
         impact: { luck: 5 }
       },
       {
         id: 'B',
-        text: '甚至空虚',
-        title: '甚至空虚',
+        text: '感到空虚',
+        title: '感到空虚',
         description: '突然觉得房间好安静。',
         quote: '这就是自由的代价。孤独，但值得。',
         impact: { san: -5 }

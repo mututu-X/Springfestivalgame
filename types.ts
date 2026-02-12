@@ -1,3 +1,4 @@
+
 export type StatKey = 'money' | 'weight' | 'face' | 'san' | 'health' | 'luck';
 
 export interface Stats {
@@ -70,9 +71,16 @@ export interface GameState {
   screen: ScreenState;
   selectedCharacterId: string | null;
   currentStats: Stats;
+  initialStats: Stats; // Track starting stats for comparison
   currentEventIndex: number; // Index in the linear event array
   history: string[]; // Track choices made
   unlockedAchievements: string[]; // IDs of unlocked achievements
-  hasNegativeMoneyRecord: boolean; // For "Wallet Kill" achievement
-  hasRecoveredMoneyRecord: boolean; // For "Bounce Back" achievement
+  
+  // Achievement Trackers
+  counters: {
+    gambleCount: number;   // Big money swings
+    badFoodCount: number;  // Health down, Weight up
+    filialCount: number;   // Face up, San down
+    typesTriggered: string[]; // Unique stat types changed in one run
+  };
 }

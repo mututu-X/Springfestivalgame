@@ -1,3 +1,4 @@
+
 import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
@@ -155,8 +156,8 @@ export const biChenglongEvents: GameEvent[] = [
       },
       {
         id: 'B',
-        text: '甚至复盘',
-        title: '甚至复盘',
+        text: '深夜复盘',
+        title: '深夜复盘',
         description: '和老婆讨论今天的“路考”失误。',
         quote: '被老婆数落了半小时，带着怨气入睡。',
         impact: { san: -5 }
@@ -284,16 +285,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至网购',
-        title: '甚至网购',
+        text: '连夜下单',
+        title: '连夜下单',
         description: '下单一本《奥数精讲》。',
         quote: '笨鸟先飞，虽然儿子是笨鸟，但我是勤奋的赶鸟人。',
         impact: { money: -50, san: 2 }
       },
       {
         id: 'B',
-        text: '甚至精神胜利',
-        title: '甚至精神胜利',
+        text: '精神胜利',
+        title: '精神胜利',
         description: '安慰自己儿子情商高。',
         quote: '以后神童没准还得给我儿子打工呢。想着想着笑出了声。',
         impact: { san: 5 }
@@ -421,16 +422,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至忆苦思甜',
-        title: '甚至忆苦思甜',
+        text: '忆苦思甜',
+        title: '忆苦思甜',
         description: '讲起当年的誓言。',
         quote: '老婆感动了一秒，然后说：‘少废话，明天早起’。',
         impact: { san: 2 }
       },
       {
         id: 'B',
-        text: '甚至打呼',
-        title: '甚至打呼',
+        text: '秒睡打呼',
+        title: '秒睡打呼',
         description: '没说两句就睡着了，呼噜声震天。',
         quote: '被老婆踹了一脚，但没醒。',
         impact: { health: 2, san: -2 }
@@ -558,16 +559,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至画饼',
-        title: '甚至画饼',
+        text: '脑补夺魁',
+        title: '脑补夺魁',
         description: '想想开学后儿子如果考了第一名。',
         quote: '精神食粮填不饱肚子，但能填补焦虑。',
         impact: { san: 2 }
       },
       {
         id: 'B',
-        text: '甚至喝水',
-        title: '甚至喝水',
+        text: '喝水充饥',
+        title: '喝水充饥',
         description: '去客厅灌了个水饱。',
         quote: '中年男人连吃夜宵的自由都没有。',
         impact: { weight: 0.5, san: -2 }
@@ -695,16 +696,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至幻想',
-        title: '甚至幻想',
+        text: '幻想中奖',
+        title: '幻想中奖',
         description: '幻想如果彩票中奖。',
         quote: '梦里什么都有。',
         impact: { san: 2 }
       },
       {
         id: 'B',
-        text: '甚至计算',
-        title: '甚至计算',
+        text: '计算发薪',
+        title: '计算发薪',
         description: '算算距离发工资还有几天。',
         quote: '还有 15 天。绝望。',
         impact: { san: -5 }
@@ -812,8 +813,8 @@ export const biChenglongEvents: GameEvent[] = [
       },
       {
         id: 'C',
-        text: '甚至不愿装',
-        title: '甚至不愿装',
+        text: '摊牌不装',
+        title: '摊牌不装',
         description: '\'就说被狗撕了\'。',
         quote: '这是下策。儿子觉得你是个天才，老婆觉得你是个废柴。',
         impact: { face: -5, luck: -10 }
@@ -832,16 +833,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至反思',
-        title: '甚至反思',
+        text: '教育反思',
+        title: '教育反思',
         description: '思考中国教育的弊端。',
         quote: '思考了五分钟，觉得还是睡觉要紧。',
         impact: { san: 2 }
       },
       {
         id: 'B',
-        text: '甚至侥幸',
-        title: '甚至侥幸',
+        text: '侥幸心理',
+        title: '侥幸心理',
         description: '觉得老师肯定看不出来。',
         quote: '自我安慰大师。心安理得地睡了。',
         impact: { luck: 2 }
@@ -969,16 +970,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至嫉妒',
-        title: '甚至嫉妒',
+        text: '嫉妒搜索',
+        title: '嫉妒搜索',
         description: '偷偷百度“班长的公司是不是皮包公司”。',
         quote: '查无此人。心里平衡了一点。',
         impact: { san: 2 }
       },
       {
         id: 'B',
-        text: '甚至抱抱',
-        title: '甚至抱抱',
+        text: '拥抱安慰',
+        title: '拥抱安慰',
         description: '抱住熟睡的老婆，寻求安慰。',
         quote: '虽然没钱，但老婆孩子热炕头，也行吧。',
         impact: { san: 5 }
@@ -1106,16 +1107,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至查路况',
-        title: '甚至查路况',
+        text: '路况焦虑',
+        title: '路况焦虑',
         description: '担心明天堵车，每隔一小时看一眼导航。',
         quote: '地图上的红线让你焦虑。没睡好。',
         impact: { san: -5 }
       },
       {
         id: 'B',
-        text: '甚至听呼吸',
-        title: '甚至听呼吸',
+        text: '聆听呼吸',
+        title: '聆听呼吸',
         description: '听着儿子平稳的呼吸声。',
         quote: '为了这个小吞金兽，拼了。瞬间充满了电。',
         impact: { san: 5, health: 2 }
@@ -1243,16 +1244,16 @@ export const biChenglongEvents: GameEvent[] = [
     choices: [
       {
         id: 'A',
-        text: '甚至失眠',
-        title: '甚至失眠',
+        text: '职场失眠',
+        title: '职场失眠',
         description: '想到明天的早会和 PPT。',
         quote: '心脏隐隐作痛。中年人的夜，总是这么长。',
         impact: { san: -5 }
       },
       {
         id: 'B',
-        text: '甚至打气',
-        title: '甚至打气',
+        text: '镜前打气',
+        title: '镜前打气',
         description: '对着镜子里的发际线说加油。',
         quote: '为了房贷，为了儿子，拼了。',
         impact: { san: 5, health: 2 }

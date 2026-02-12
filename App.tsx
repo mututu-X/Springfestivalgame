@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { GameState, ScreenState, Stats, Character, Choice } from './types';
 import { CHARACTERS, CHARACTER_EVENTS, CHARACTER_ENDINGS, ACHIEVEMENTS } from './data/gameData';
@@ -13,11 +14,16 @@ const App: React.FC = () => {
     screen: 'MAIN_MENU',
     selectedCharacterId: null,
     currentStats: { money: 0, weight: 0, face: 0, san: 0, health: 0, luck: 0 },
+    initialStats: { money: 0, weight: 0, face: 0, san: 0, health: 0, luck: 0 },
     currentEventIndex: 0,
     history: [],
     unlockedAchievements: [],
-    hasNegativeMoneyRecord: false,
-    hasRecoveredMoneyRecord: false,
+    counters: {
+      gambleCount: 0,
+      badFoodCount: 0,
+      filialCount: 0,
+      typesTriggered: [],
+    }
   });
 
   // Load unlocked achievements from local storage on mount
@@ -33,11 +39,9 @@ const App: React.FC = () => {
   };
 
   const getCharacter = (): Character => {
-    // If selectedCharacterId is set, find that character
     if (gameState.selectedCharacterId) {
        return CHARACTERS.find(c => c.id === gameState.selectedCharacterId) || CHARACTERS[0];
     }
-    // Default to the first character if none selected (e.g. during initial render or fallback)
     return CHARACTERS[0];
   };
 
@@ -54,8 +58,6 @@ const App: React.FC = () => {
   // --- Actions ---
 
   const handleStartGame = () => {
-    // Randomly pick a character to start showing in selection screen if not already set
-    // or just default to first one. Let's just set screen to CHARACTER_SELECT and let it use current or default.
     const initialCharId = gameState.selectedCharacterId || CHARACTERS[0].id;
     setGameState(prev => ({ 
       ...prev, 
@@ -65,30 +67,26 @@ const App: React.FC = () => {
   };
 
   const handleSelectCharacter = () => {
-    // Set initial stats based on character
     const char = getCharacter();
     setGameState(prev => ({ 
       ...prev, 
       screen: 'ATTRIBUTE_ADJUST',
       selectedCharacterId: char.id,
-      currentStats: { ...char.baseStats }
+      currentStats: { ...char.baseStats },
+      initialStats: { ...char.baseStats },
     }));
   };
 
   const handleRandomCharacter = () => {
-    // Pick a random character that is NOT the current one
     const currentId = gameState.selectedCharacterId;
     const available = CHARACTERS.filter(c => c.id !== currentId);
-    
-    // If only one character exists, this logic falls back safely
     if (available.length === 0) return;
-
     const nextChar = available[Math.floor(Math.random() * available.length)];
     setGameState(prev => ({ ...prev, selectedCharacterId: nextChar.id }));
   };
 
   const handleUpdateStats = (newStats: Stats) => {
-    setGameState(prev => ({ ...prev, currentStats: newStats }));
+    setGameState(prev => ({ ...prev, currentStats: newStats, initialStats: newStats }));
   };
 
   const handleBeginStory = () => {
@@ -97,41 +95,89 @@ const App: React.FC = () => {
       screen: 'GAME_LOOP',
       currentEventIndex: 0,
       history: [],
-      hasNegativeMoneyRecord: false,
-      hasRecoveredMoneyRecord: false
+      counters: {
+        gambleCount: 0,
+        badFoodCount: 0,
+        filialCount: 0,
+        typesTriggered: [],
+      }
     }));
   };
 
-  const checkAchievements = (prevStats: Stats, newStats: Stats, currentAchvs: string[], recordNeg: boolean, recordRec: boolean) => {
-    const newUnlocked = [...currentAchvs];
-    let newNeg = recordNeg;
-    let newRec = recordRec;
+  // --- Achievement Logic ---
+  
+  const checkAchievements = (
+    currentStats: Stats, 
+    initialStats: Stats, 
+    impact: any, // ChoiceImpact
+    counters: GameState['counters'],
+    currentUnlocked: string[]
+  ) => {
+    const newUnlocked = [...currentUnlocked];
+    let newCounters = { ...counters };
 
-    // 1. Wallet Kill: Money goes positive -> negative
-    if (prevStats.money >= 0 && newStats.money < 0 && !newUnlocked.includes('wallet_kill')) {
-      newUnlocked.push('wallet_kill');
-      newNeg = true;
+    // 1. Update Counters based on Event Heuristics (Heuristic Logic)
+    
+    // Gamble: Big money swing (>800 absolute change) usually implies gambling or big investment
+    if (Math.abs(impact.money || 0) > 800) {
+      newCounters.gambleCount += 1;
     }
 
-    // Update negative record even if achievement already unlocked (for bounce back logic)
-    if (newStats.money < 0) newNeg = true;
-
-    // 2. Bounce Back: Money goes negative -> positive
-    if (newNeg && prevStats.money < 0 && newStats.money > 0 && !newUnlocked.includes('bounce_back')) {
-      newUnlocked.push('bounce_back');
-      newRec = true;
+    // Bad Food: Health down AND Weight up
+    if ((impact.health || 0) < 0 && (impact.weight || 0) > 0) {
+      newCounters.badFoodCount += 1;
     }
 
-    // 3. Koi: Luck >= 90
-    if (newStats.luck >= 90 && !newUnlocked.includes('koi')) {
-      newUnlocked.push('koi');
+    // Filial Piety: Face up AND Sanity down (Sacrificing self for face/family)
+    if ((impact.face || 0) > 0 && (impact.san || 0) < 0) {
+      newCounters.filialCount += 1;
     }
 
-    if (newUnlocked.length !== currentAchvs.length) {
+    // Hexagon Warrior: Track unique stat types changed
+    const changes = Object.keys(impact).filter(k => impact[k] !== 0);
+    changes.forEach(key => {
+      if (!newCounters.typesTriggered.includes(key)) {
+        newCounters.typesTriggered.push(key);
+      }
+    });
+
+    // 2. Check Achievement Conditions
+
+    // A. Numerical Extremes
+    if (currentStats.money < -5000 && !newUnlocked.includes('cyber_beggar')) newUnlocked.push('cyber_beggar');
+    if ((currentStats.money - initialStats.money) > 10000 && !newUnlocked.includes('village_tycoon')) newUnlocked.push('village_tycoon');
+    if (currentStats.health < 10 && !newUnlocked.includes('icu_reserve')) newUnlocked.push('icu_reserve');
+    if (currentStats.san > 120 && !newUnlocked.includes('mad_dog')) newUnlocked.push('mad_dog');
+    if (currentStats.face < -80 && !newUnlocked.includes('social_terrorist')) newUnlocked.push('social_terrorist');
+    if ((currentStats.weight - initialStats.weight) >= 5 && !newUnlocked.includes('weight_gain')) newUnlocked.push('weight_gain');
+    if (currentStats.luck < 0 && !newUnlocked.includes('unlucky_one')) newUnlocked.push('unlucky_one');
+
+    // B. Behavioral (Based on counters)
+    if (newCounters.gambleCount >= 3 && !newUnlocked.includes('the_gambler')) newUnlocked.push('the_gambler');
+    if (newCounters.badFoodCount >= 3 && !newUnlocked.includes('breaking_bad_food')) newUnlocked.push('breaking_bad_food');
+    if (newCounters.filialCount >= 4 && !newUnlocked.includes('filial_piety')) newUnlocked.push('filial_piety');
+
+    // C. Special
+    if (newCounters.typesTriggered.length >= 6 && !newUnlocked.includes('hexagon_warrior')) newUnlocked.push('hexagon_warrior');
+
+    // Balancing Act (Check at every step, easier to trigger if you maintain it once)
+    // Note: Condition implies "End of Game", but unlocking it mid-game if satisfied is generous and fine.
+    // To strictly follow "End Game", we would check this only when isGameOver is true.
+    // Let's check if they maintain it late game (e.g. after day 5, index > 15).
+    // For simplicity, let's unlock if they hold it at any point, creating a "Moment of Balance".
+    const allPositive = currentStats.money > 0 && currentStats.weight > 0 && currentStats.face > 0 && currentStats.san > 0 && currentStats.health > 0;
+    const allAbove40 = currentStats.money > 0 && currentStats.face >= 40 && currentStats.san >= 40 && currentStats.health >= 40; 
+    // Money just needs to be positive, Weight is usually around 50 so 40 is low bar.
+    if (allAbove40 && !newUnlocked.includes('balancing_act')) {
+       // Optional: Add a stricter check (e.g., late game index check) if needed.
+       newUnlocked.push('balancing_act');
+    }
+
+    if (newUnlocked.length !== currentUnlocked.length) {
       saveAchievements(newUnlocked);
     }
 
-    return { newUnlocked, newNeg, newRec };
+    return { newUnlocked, newCounters };
   };
 
   const handleChoiceMade = (choice: Choice) => {
@@ -147,13 +193,13 @@ const App: React.FC = () => {
       luck: prevStats.luck + (impact.luck || 0),
     };
 
-    // Check Achievements
-    const { newUnlocked, newNeg, newRec } = checkAchievements(
-      prevStats, 
+    // Check Achievements with new logic
+    const { newUnlocked, newCounters } = checkAchievements(
       newStats, 
-      gameState.unlockedAchievements,
-      gameState.hasNegativeMoneyRecord,
-      gameState.hasRecoveredMoneyRecord
+      gameState.initialStats, 
+      impact,
+      gameState.counters,
+      gameState.unlockedAchievements
     );
 
     const nextIndex = gameState.currentEventIndex + 1;
@@ -161,14 +207,12 @@ const App: React.FC = () => {
     
     // Check if game over
     if (nextIndex >= currentEvents.length) {
-      // Calculate ending
       setGameState(prev => ({
         ...prev,
         currentStats: newStats,
         history: [...prev.history, choice.id],
         unlockedAchievements: newUnlocked,
-        hasNegativeMoneyRecord: newNeg,
-        hasRecoveredMoneyRecord: newRec,
+        counters: newCounters,
         screen: 'ENDING'
       }));
     } else {
@@ -178,8 +222,7 @@ const App: React.FC = () => {
         currentEventIndex: nextIndex,
         history: [...prev.history, choice.id],
         unlockedAchievements: newUnlocked,
-        hasNegativeMoneyRecord: newNeg,
-        hasRecoveredMoneyRecord: newRec,
+        counters: newCounters,
       }));
     }
   };
@@ -187,7 +230,6 @@ const App: React.FC = () => {
   const getEnding = () => {
     const stats = gameState.currentStats;
     const currentEndings = getCharacterEndings();
-    // Find first matching ending condition (order in array matters for priority)
     return currentEndings.find(e => e.condition(stats)) || currentEndings[currentEndings.length - 1];
   };
 

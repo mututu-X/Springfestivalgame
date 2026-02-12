@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const biChenglongChar: Character = {
   id: 'bi_chenglong',
   name: '毕成龙',
-  avatar: 'https://i.postimg.cc/QxYr5Wpy/107.jpg',
+  avatar: '/image/roleicon/107.jpg',
   tags: ['鸡娃战神·绝望家长', '#寒假作业监工', '#红包回收站'],
   roleDescription: '鸡娃战神·绝望家长',
   bio: '“来，儿子，给太爷爷背个圆周率！再来一段英语朗诵！……你们吃你们的，我得盯着他做寒假作业。我也不想这样，但隔壁老王家的孩子连核聚变都快学会了，我能不急吗？”',

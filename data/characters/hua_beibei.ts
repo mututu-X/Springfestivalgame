@@ -1,17 +1,18 @@
+
 import { Character, GameEvent, Ending } from '../../types';
 
 // Default images based on time of day
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const huaBeibeiChar: Character = {
   id: 'hua_beibei',
   name: '花贝贝',
-  avatar: 'https://i.postimg.cc/zfD7Y0Sk/102.jpg',
+  avatar: '/image/roleicon/102.jpg',
   tags: ['都市隶人·回村Vivian', '#精致穷', '#沪上名媛体验卡'],
   roleDescription: '都市隶人·回村Vivian',
   bio: '“我的美甲是找‘海底捞’做的，包包是‘广州皮具城’的高定。回村这七天，是我年度演技大赏。千万别问我为什么不买车，问就是‘上海牌照太难拍’，其实是连五菱宏光都首付不起。”',

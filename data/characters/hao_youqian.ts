@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const haoYouqianChar: Character = {
   id: 'hao_youqian',
   name: '郝有乾',
-  avatar: 'https://i.postimg.cc/HsvC57Qb/106.jpg',
+  avatar: '/image/roleicon/106.jpg',
   tags: ['隐形富豪·土味房东', '#人字拖', '#蛇皮袋装现金'],
   roleDescription: '隐形富豪·土味房东',
   bio: '“穿着这件起球的 POLO 衫，踩着五块钱的人字拖，没人知道我腰上挂的那串钥匙能买下半个 CBD。那些开宝马回来的小年轻，车还是租我的呢。发红包？随便啦，每人两百，见者有份。”',

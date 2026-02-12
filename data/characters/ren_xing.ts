@@ -1,18 +1,19 @@
 
+
 import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const renXingChar: Character = {
   id: 'ren_xing',
   name: '任兴',
-  avatar: 'https://i.postimg.cc/dtNKdT8r/105.jpg',
+  avatar: '/image/roleicon/105.jpg',
   tags: ['发疯学者·职场整顿版', '#素质消失术', '#哪壶不开提哪壶'],
   roleDescription: '发疯学者·职场整顿版',
   bio: '“大伯，您退休金多少？够去养老院 ICU 住几天？表哥，学区房买了吗？嫂子怎么没回来？哦离了啊。——只要我先发疯，就没人能道德绑架我。放下素质，享受缺德人生。”',
@@ -893,32 +894,32 @@ export const renXingEvents: GameEvent[] = [
     timeOfDay: 'afternoon',
     timeLabel: '下午',
     title: '同学聚会邀请函',
-    description: '班长在群里@所有人，发起同学聚会。',
+    description: '班长在群里@所有人，提议去县城最贵的KTV聚会，AA制，人均预计300。群里一片“收到”，只有你看着余额陷入沉思。',
     image: DEFAULT_IMAGES.afternoon,
     choices: [
       {
         id: 'A',
-        text: '盛装出席',
-        title: '盛装出席',
-        description: '去！还要盛装出席！',
-        quote: '你花钱做了头发，准备去见证人类虚荣心的巅峰。',
-        impact: { money: -200, face: 5 }
+        text: '直接退群',
+        title: '直接退群',
+        description: '二话不说，直接退群。',
+        quote: '深藏功与名。只要我跑得快，尴尬就追不上我。',
+        impact: { san: 10, face: -5 }
       },
       {
         id: 'B',
-        text: '当场退群',
-        title: '当场退群',
-        description: '不去，直接退群。',
-        quote: '只要我没有道德，你就绑架不了我。爽！',
-        impact: { san: 20, face: -20 }
+        text: '哭穷表演',
+        title: '哭穷表演',
+        description: '“班长，可以带家属吗？我全家都想去蹭饭。”',
+        quote: '群里瞬间冷场。班长私聊问你是不是被盗号了。',
+        impact: { face: -10, money: 0 }
       },
       {
         id: 'C',
-        text: '提议AA',
-        title: '提议AA',
-        description: '群里回复：“AA吗？人均超过 50 我不去啊。”',
-        quote: '群里瞬间冷场。你凭一己之力拉低了聚会的格调。你是英雄。',
-        impact: { face: -30, san: 15 }
+        text: '发送砍一刀',
+        title: '发送砍一刀',
+        description: '往群里发了个拼多多砍一刀链接。',
+        quote: '“帮我砍一下，我凑够了钱就去。”你不仅没花钱，还白嫖了大家的点击。',
+        impact: { san: 15, face: -20 }
       }
     ]
   },
@@ -928,33 +929,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初五',
     timeOfDay: 'evening',
     timeLabel: '晚上',
-    title: '名利场·凡尔赛之夜',
-    description: '还是去了同学会。大家都在装。',
+    title: '独自狂欢',
+    description: '并没有去聚会。你斥巨资（20元）在路边摊买了一份炸串，一边吃一边看群里他们虚伪的合照。',
     image: DEFAULT_IMAGES.evening,
     choices: [
       {
         id: 'A',
-        text: '疯狂打包',
-        title: '疯狂打包',
-        description: '默默干饭，打包剩菜。',
-        quote: '只要我脸皮厚，这顿就是自助餐。这波不亏。',
-        impact: { money: 20, face: -20 }
+        text: '朋友圈点赞',
+        title: '朋友圈点赞',
+        description: '给所有人的合照点赞。',
+        quote: '主打一个“已阅”。虽然我不在江湖，但江湖有我的赞。',
+        impact: { face: 2, san: 2 }
       },
       {
         id: 'B',
-        text: '虚伪捧杀',
-        title: '虚伪捧杀',
-        description: '配合演出：“哇！王总真厉害！李总带带我！”',
-        quote: '你出卖了灵魂，换来了所谓的‘人脉’（其实并没有卵用）。',
-        impact: { san: -15, luck: 5 }
+        text: '炸串真香',
+        title: '炸串真香',
+        description: '再加两串里脊肉。',
+        quote: '满嘴流油。这不比听班长吹牛逼香？',
+        impact: { health: -2, san: 5 }
       },
       {
         id: 'C',
-        text: '当众拆穿',
-        title: '当众拆穿',
-        description: '当众拆穿：“张总，听说你那大奔是租的？一天多少钱？”',
-        quote: '全场死寂。【素质消失术】终极奥义。你成为了聚会终结者。',
-        impact: { san: 30, face: -50 }
+        text: '匿名短信',
+        title: '匿名短信',
+        description: '给班长发匿名短信：“你老婆知道你初恋也在吗？”',
+        quote: '虽然是编的，但看群里班长突然不说话了，感觉很有趣。',
+        impact: { san: 10, luck: -5 }
       }
     ]
   },
@@ -964,24 +965,24 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初五',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '社交清理',
-    description: '聚会结束，班长发了假惺惺的合照。',
+    title: '众人皆醉',
+    description: '群里还在发KTV的小视频，鬼哭狼嚎。你关上手机，享受清静。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '正义执行',
-        title: '正义执行',
-        description: '举报群聊有违规内容。',
-        quote: '我是正义的化身。',
-        impact: { san: 5, luck: 2 }
+        text: '拉黑群组',
+        title: '拉黑群组',
+        description: '把同学群设为免打扰并折叠。',
+        quote: '世界清静了。',
+        impact: { san: 5 }
       },
       {
         id: 'B',
-        text: '彻底无视',
-        title: '彻底无视',
-        description: '设置消息免打扰，睡觉。',
-        quote: '你们演你们的，我睡我的。',
+        text: '早睡早起',
+        title: '早睡早起',
+        description: '为了明天的精神状态，睡觉。',
+        quote: '在这个浮躁的夜晚，你是唯一的智者。',
         impact: { health: 2 }
       }
     ]
@@ -993,33 +994,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初六',
     timeOfDay: 'morning',
     timeLabel: '早上',
-    title: '特产扫货',
-    description: '快走了，得买点特产带回去给同事。',
+    title: '特产塞箱',
+    description: '老妈试图把半头猪塞进你的行李箱。你看着那油腻腻的袋子，想到了高铁安检员的眼神。',
     image: DEFAULT_IMAGES.morning,
     choices: [
       {
         id: 'A',
-        text: '冤种采购',
-        title: '冤种采购',
-        description: '老实买买买。',
-        quote: '花了冤枉钱，买了个心安。同事们估计转手就扔了。',
-        impact: { money: -300, san: -2 }
+        text: '誓死不从',
+        title: '誓死不从',
+        description: '“妈，我是去上班，不是去逃荒。”',
+        quote: '你妈骂你忘本，但你保住了行李箱的整洁。',
+        impact: { face: -2, san: 5 }
       },
       {
         id: 'B',
-        text: '土豆充数',
-        title: '土豆充数',
-        description: '去菜市场买两斤土豆。',
-        quote: '“这是正宗老家笨土豆！”这理由无懈可击，还省钱。',
-        impact: { money: -10, face: -5 }
+        text: '勉强接受',
+        title: '勉强接受',
+        description: '挑两块小的带着。',
+        quote: '各退一步。你妈虽然不满意，但也没再说什么。',
+        impact: { san: -2, weight: 1 }
       },
       {
         id: 'C',
-        text: '聪明网购',
-        title: '聪明网购',
-        description: '网购下单直接寄到公司。',
-        quote: '这是现代智慧。没人知道你没在当地买，除了快递单。',
-        impact: { money: -100, luck: 5 }
+        text: '反向进货',
+        title: '反向进货',
+        description: '把老爸的好烟好酒顺走。',
+        quote: '“爸，这烟我不抽也是浪费。”你爸气得吹胡子瞪眼，但没拦你。',
+        impact: { money: 200, face: -5 }
       }
     ]
   },
@@ -1029,33 +1030,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初六',
     timeOfDay: 'afternoon',
     timeLabel: '下午',
-    title: '最后的训话',
-    description: '离别前的最后一下午，父母开启了‘尊享版唠叨模式’。',
+    title: '最后的闲逛',
+    description: '在村里做最后的巡视。看到那个曾经嘲笑过你的二婶，她正因为儿子欠债在门口骂街。',
     image: DEFAULT_IMAGES.afternoon,
     choices: [
       {
         id: 'A',
-        text: '敷衍三连',
-        title: '敷衍三连',
-        description: '“好好好，是是是，对对对”。',
-        quote: '经典的‘敷衍三连’。虽然没听进去，但这是为了世界和平。',
-        impact: { san: -5, face: 5 }
+        text: '看戏模式',
+        title: '看戏模式',
+        description: '买把瓜子，蹲在不远处看戏。',
+        quote: '这就是回馈。善恶终有报，苍天饶过谁。',
+        impact: { san: 10, luck: 2 }
       },
       {
         id: 'B',
-        text: '反向画饼',
-        title: '反向画饼',
-        description: '反向画饼：“明年一定带个亿万富翁回来！”',
-        quote: '只要饼画得够大，父母就吃不下。他们觉得你在做梦。',
-        impact: { san: 10, face: -5 }
+        text: '路过补刀',
+        title: '路过补刀',
+        description: '假装关心：“二婶，要不把房子卖了吧？”',
+        quote: '二婶差点气晕过去。你深藏功与名。',
+        impact: { san: 15, face: -5 }
       },
       {
         id: 'C',
-        text: '物理屏蔽',
-        title: '物理屏蔽',
-        description: '带上耳机，物理屏蔽。',
-        quote: '父母看着像在演默剧的你，叹了口气，放弃了。',
-        impact: { face: -10, san: 5 }
+        text: '无视离开',
+        title: '无视离开',
+        description: '径直走过，眼神都不给一个。',
+        quote: '无视是最大的鄙视。你已经不是当年的你了。',
+        impact: { san: 5, face: 2 }
       }
     ]
   },
@@ -1065,33 +1066,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初六',
     timeOfDay: 'evening',
     timeLabel: '晚上',
-    title: '俄罗斯方块·行李箱版',
-    description: '你妈试图往你那 20 寸的箱子里塞进半头猪。',
+    title: '离别饭',
+    description: '最后一顿晚饭。父母突然变得客气起来，不停给你夹菜。气氛有点煽情。',
     image: DEFAULT_IMAGES.evening,
     choices: [
       {
         id: 'A',
-        text: '泰山压顶',
-        title: '泰山压顶',
-        description: '拼命塞，坐上去压。',
-        quote: '箱子拉链发出了惨叫，但你带走了沉甸甸的母爱（负担）。',
-        impact: { health: -2, weight: 5 }
+        text: '打破煽情',
+        title: '打破煽情',
+        description: '“妈，这肉咸了。”',
+        quote: '你破坏了气氛，但阻止了眼泪。你不喜欢哭哭啼啼。',
+        impact: { san: 5, face: -2 }
       },
       {
         id: 'B',
-        text: '严词拒绝',
-        title: '严词拒绝',
-        description: '坚决不要：“妈，大城市有超市，我不是去荒野求生！”',
-        quote: '你妈觉得你不知道柴米油盐贵，偷偷塞你包里两个煮鸡蛋。',
-        impact: { face: -5, san: 5 }
+        text: '默默承受',
+        title: '默默承受',
+        description: '低头扒饭，听他们唠叨。',
+        quote: '左耳进右耳出。这一刻，你是个孝顺的工具人。',
+        impact: { san: -2, health: 2 }
       },
       {
         id: 'C',
-        text: '快递解忧',
-        title: '快递解忧',
-        description: '提议快递寄过去。',
-        quote: '用金钱换空间。双赢。',
-        impact: { money: -50, luck: 5 }
+        text: '索要路费',
+        title: '索要路费',
+        description: '“爸，给点路费呗，机票挺贵的。”',
+        quote: '你爸愣了一下，掏出了两百块。虽然不多，但是肉。',
+        impact: { money: 200, face: -5 }
       }
     ]
   },
@@ -1101,25 +1102,25 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初六',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '离愁别绪',
-    description: '明天就要走了。',
+    title: '再见旧床',
+    description: '明天就要回去了。躺在硬板床上，竟然有点舍不得。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '偷拍留念',
-        title: '偷拍留念',
-        description: '偷拍一张家里的照片。',
-        quote: '留个纪念，下次回来不知道什么时候。',
-        impact: { san: -2, luck: 2 }
+        text: '期待自由',
+        title: '期待自由',
+        description: '想到回去就能点外卖、熬夜没人管。',
+        quote: '自由在召唤！嘴角疯狂上扬。',
+        impact: { san: 5 }
       },
       {
         id: 'B',
-        text: '渴望外卖',
-        title: '渴望外卖',
-        description: '期待回大城市点外卖。',
-        quote: '家乡很好，但外卖更好。',
-        impact: { san: 5, health: -1 }
+        text: '略有遗憾',
+        title: '略有遗憾',
+        description: '这次回来好像也没干啥正事。',
+        quote: '算了，过年不就是换个地方玩手机吗。',
+        impact: { san: 0 }
       }
     ]
   },
@@ -1130,33 +1131,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初七',
     timeOfDay: 'morning',
     timeLabel: '早上',
-    title: '离家仪式',
-    description: '父母站在寒风中，突然显得有点苍老。',
+    title: '启程',
+    description: '父母送到村口。你看着他们变小的身影，心里五味杂陈。',
     image: DEFAULT_IMAGES.morning,
     choices: [
       {
         id: 'A',
-        text: '深情拥抱',
-        title: '深情拥抱',
-        description: '拥抱父母：“走了啊，照顾好身体。”',
-        quote: '短暂的温情。你看到老妈偷偷抹了眼泪。唉，这就是羁绊。',
-        impact: { san: 10, face: 5 }
+        text: '甚至不回头',
+        title: '甚至不回头',
+        description: '大步流星，绝不回头。',
+        quote: '酷盖从不回头看爆炸（泪点）。',
+        impact: { san: 5, face: 5 }
       },
       {
         id: 'B',
-        text: '潇洒转身',
-        title: '潇洒转身',
-        description: '挥手不回头：“我去为 GDP 做贡献了！”',
-        quote: '潇洒离去。真男人从不回头看爆炸（泪水）。',
-        impact: { san: 5, luck: 5 }
+        text: '挥手告别',
+        title: '挥手告别',
+        description: '用力挥手：“回去吧！别送了！”',
+        quote: '还是有点心酸的。明年见吧，老头老太。',
+        impact: { san: 2, face: 2 }
       },
       {
         id: 'C',
-        text: '清点物资',
-        title: '清点物资',
-        description: '检查有没有落东西，无视煽情。',
-        quote: '实用主义者。你确认了身份证在，就放心了。',
-        impact: { face: -5, luck: 2 }
+        text: '最后整活',
+        title: '最后整活',
+        description: '大喊：“记得给我转账！”',
+        quote: '你妈举起了扫帚作势要打，你笑着跑了。',
+        impact: { san: 5, money: 0 }
       }
     ]
   },
@@ -1166,33 +1167,25 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初七',
     timeOfDay: 'afternoon',
     timeLabel: '下午',
-    title: '返程的戒断反应',
-    description: '回程的高铁上，周围依然喧闹。',
+    title: '返程高铁',
+    description: '车厢里充满了返程打工人的怨气。你旁边的大哥正在吃泡面。',
     image: DEFAULT_IMAGES.afternoon,
     choices: [
       {
         id: 'A',
-        text: '提前复工',
-        title: '提前复工',
-        description: '打开工作群，提前进入状态。',
-        quote: '看着 99+ 的消息，你想跳车。社畜模式加载中...',
-        impact: { san: -20, money: 100 }
+        text: '甚至蹭汤',
+        title: '甚至蹭汤',
+        description: '盯着他的面看。',
+        quote: '大哥被你看毛了，问你要不要喝汤。你礼貌拒绝。',
+        impact: { san: 2, face: -2 }
       },
       {
         id: 'B',
-        text: '补觉续命',
-        title: '补觉续命',
-        description: '补觉，逃避现实。',
-        quote: '能睡一分钟是一分钟。梦里没有 KPI。',
-        impact: { health: 5, san: 5 }
-      },
-      {
-        id: 'C',
-        text: '痛苦算账',
-        title: '痛苦算账',
-        description: '算账：这趟回家花了多少钱。',
-        quote: '看着账单，你觉得自己这几天是在‘精准扶贫’。心痛。',
-        impact: { san: -10, money: 0 }
+        text: '闭目养神',
+        title: '闭目养神',
+        description: '睡觉，补充能量。',
+        quote: '为明天的搬砖做准备。',
+        impact: { health: 2 }
       }
     ]
   },
@@ -1202,33 +1195,33 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初七',
     timeOfDay: 'evening',
     timeLabel: '晚上',
-    title: '出租屋的泡面',
-    description: '回到冰冷的出租屋。你煮了一碗泡面。',
+    title: '回归',
+    description: '回到出租屋。打开门，一股冷清的气息扑面而来。',
     image: DEFAULT_IMAGES.evening,
     choices: [
       {
         id: 'A',
-        text: '回归宣言',
-        title: '回归宣言',
-        description: '发朋友圈：“已回村（城），工位见。”',
-        quote: '春节副本通关。游戏结束，生活继续。',
-        impact: { face: 5, luck: 2 }
+        text: '狂点外卖',
+        title: '狂点外卖',
+        description: '点一份全家桶奖励自己。',
+        quote: '热量爆炸，快乐爆炸。这才是生活。',
+        impact: { health: -5, san: 10 }
       },
       {
         id: 'B',
-        text: '放飞自我',
-        title: '放飞自我',
-        description: '大喊一声：“老子又是这条街最靓的仔！”',
-        quote: '隔壁邻居敲墙骂你神经病。这熟悉的感觉，回来了。',
-        impact: { san: 15, face: -5 }
+        text: '清理行李',
+        title: '清理行李',
+        description: '把老妈塞的腊肉拿出来。',
+        quote: '看着那块肉，突然想家了。',
+        impact: { san: -2 }
       },
       {
         id: 'C',
-        text: '倒头大睡',
-        title: '倒头大睡',
-        description: '定好明天闹钟，倒头就睡。',
-        quote: '你是成熟的打工人。晚安，赛博世界。',
-        impact: { health: 5, san: 5 }
+        text: '立即开黑',
+        title: '立即开黑',
+        description: '打开电脑，启动游戏。',
+        quote: '只要游戏开始，孤独就追不上我。',
+        impact: { san: 5, health: -2 }
       }
     ]
   },
@@ -1238,24 +1231,24 @@ export const renXingEvents: GameEvent[] = [
     dayLabel: '正月初七',
     timeOfDay: 'sleep',
     timeLabel: '睡觉',
-    title: '游戏结算',
-    description: '闭上眼，假期的一幕幕像走马灯一样闪过。',
+    title: '假期结束',
+    description: '定好明天 7 点的闹钟。春节副本，通关。',
     image: DEFAULT_IMAGES.sleep,
     choices: [
       {
         id: 'A',
-        text: '期待红包',
-        title: '期待红包',
-        description: '期待明天的开工红包。',
-        quote: '苍蝇腿也是肉。为了钱，忍了。',
-        impact: { luck: 5 }
+        text: '甚至期待',
+        title: '甚至期待',
+        description: '想想要见到可爱的同事（并没有）。',
+        quote: '只有工资能给我安慰。',
+        impact: { money: 0 }
       },
       {
         id: 'B',
-        text: '感到空虚',
-        title: '感到空虚',
-        description: '突然觉得房间好安静。',
-        quote: '这就是自由的代价。孤独，但值得。',
+        text: '甚至绝望',
+        title: '甚至绝望',
+        description: '不想上班不想上班。',
+        quote: '带着怨气入睡。',
         impact: { san: -5 }
       }
     ]
@@ -1264,21 +1257,21 @@ export const renXingEvents: GameEvent[] = [
 
 export const renXingEndings: Ending[] = [
   {
-    id: 'crazy_legend',
-    title: '传说级·村口疯狗',
-    description: '你提着行李箱站在村口，感觉神清气爽，头顶的蓝天都比往年更蓝。身后是正在指指点点的七大姑八大姨，和被你气得血压升高的熊孩子家长。这个春节，你没有送出一个不情愿的红包，没有喝下一杯不想喝的酒，也没有忍受一句爹味的说教。虽然家族群里把你踢了，村口情报中心传言你“在大城市疯了”，但你摸了摸口袋里保住的存款和心中满溢的快乐，笑着对自己说：“这才是任兴（任性）的人生啊。” (你的传说将在村里流传至少三年，主要作为反面教材。)',
-    condition: (stats) => stats.san >= 140
+    id: 'crazy_winner',
+    title: '赛博疯狗的“至高胜利”',
+    description: '假期结束，你精神抖擞地回到了工位。这个春节，你没有被任何亲戚道德绑架，因为你并没有道德。你怼翻了势利的二婶，吓跑了借钱的表弟，拉黑了虚伪的同学群。虽然在老家你的名声已经臭不可闻，成了“那个在大城市疯了的孩子”，但你摸着良心（如果有的话），感到无比舒畅。你的San值处于巅峰状态，甚至觉得老板那张臭脸都变得可爱起来——毕竟他只是想要你的劳动力，而亲戚们想要的是你的命。',
+    condition: (stats) => stats.san >= 120
   },
   {
-    id: 'bankrupt',
-    title: '破产版·家族散财童子',
-    description: '回到出租屋，看着手机余额显示，你陷入了长久的沉默。那被表弟摔断的手办尸体仿佛在嘲笑你，朋友圈里同学会的大合照除了证明你是个合格的“买单侠”外毫无意义。你为了所谓的“体面”和“家族和谐”，打肿脸充胖子，结果不仅脸肿了，钱包也瘪了。接下来的一一个月，你必须依靠每天一顿泡面和公司蹭水来度过。 (这是一场毫无性价比的返乡，你赢了长辈口中的“懂事”，却输了打工人的“生存”。)',
-    condition: (stats) => stats.money < 2500
+    id: 'social_outcast',
+    title: '全村公敌',
+    description: '你成功得罪了所有人。现在全村都在传你的坏话，说你在外面干传销、脑子坏了、六亲不认。你爸妈打电话来把你骂了一顿，并威胁要断绝关系。虽然你获得了自由，但这代价似乎有点大。你独自坐在出租屋里，吃着外卖，感到一种众人皆醉我独醒的孤独（和一丝丝爽感）。',
+    condition: (stats) => stats.face <= -100
   },
   {
-    id: 'sub_health',
-    title: '憋屈的·亚健康社畜',
-    description: '工位的电脑屏幕亮起，你的灵魂却还留在老家的硬板床上。这个春节过得像一场漫长的拉锯战：你怼了亲戚但又随后后悔，想省钱却还是买了人情债，吃了几天剩菜，喝了几顿大酒。此刻的你，面色蜡黄，胃部隐隐作痛，精神萎靡不振。你既没有像疯狗一样获得彻底的快乐，也没有像成功人士一样获得虚荣的满足。你只是在这个庞大的春节习俗机器中，被嚼了一遍又吐了出来。 (这就是90%普通人的春节真相：一种名为“节后综合征”的慢性病。)',
-    condition: (stats) => stats.san < 70 || stats.health < 50
+    id: 'normal_return',
+    title: '薛定谔的“疯批”',
+    description: '闹钟响起，你熟练地切换回“社畜模式”。春节期间的那些发疯瞬间——在高铁上外放经文、在亲戚面前装神弄鬼，仿佛是另一个人格干的。你依然是那个偶尔在互联网上发疯，现实中唯唯诺诺的打工人。生活继续，你把那份狂野藏在了心底，等待下一个春节的到来。',
+    condition: () => true // Default ending
   }
 ];

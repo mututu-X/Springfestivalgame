@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const fanTongChar: Character = {
   id: 'fan_tong',
   name: '范统',
-  avatar: 'https://i.postimg.cc/gJ1sYxG4/103.jpg',
+  avatar: '/image/roleicon/103.jpg',
   tags: ['脆皮大学生·特种兵', '#眼神清澈', '#除了吃啥也不会'],
   roleDescription: '脆皮大学生·特种兵',
   bio: '“妈，我的秋裤在哪？妈，饭好了没？作为家里的吉祥物，我主要负责‘清澈的愚蠢’。别让我去拜年，我社恐；别让我干活，我低血糖。给我一个 Wifi，我就能安静地躺到元宵节。”',

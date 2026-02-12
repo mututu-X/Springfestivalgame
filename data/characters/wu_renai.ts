@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const wuRenaiChar: Character = {
   id: 'wu_renai',
   name: '吴仁爱',
-  avatar: 'https://i.postimg.cc/3JfHpDg6/110.jpg',
+  avatar: '/image/roleicon/110.jpg',
   tags: ['大龄剩斗士·相亲遇难', '#此人出售', '#莫欺中年单'],
   roleDescription: '大龄剩斗士·相亲遇难',
   bio: '“我不是剩下的，我是被挑剩下的……不对，我是宁缺毋滥！但在我妈眼里，我就 是个滞销库存。今年我的 KPI 是见完 8 个相亲对象，且保持不吐血。别问要求，是 个活的就行。”',

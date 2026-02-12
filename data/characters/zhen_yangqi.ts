@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const zhenYangqiChar: Character = {
   id: 'zhen_yangqi',
   name: '甄洋气',
-  avatar: 'https://i.postimg.cc/qq75MjDY/108.jpg',
+  avatar: '/image/roleicon/108.jpg',
   tags: ['海归凡尔赛·假装名流', '#中英夹杂', '#其实在送外卖'],
   roleDescription: '海归凡尔赛·假装名流',
   bio: '“Oh my god，家里的红酒没醒过？这种白酒太 spicy 了。我在 Manchester 的时候，Christmas Eve 都是去 Church 的。虽然我现在还是 Gap Year，但我这是在寻找 Life Balance，懂吗？”',

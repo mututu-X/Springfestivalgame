@@ -2,16 +2,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const huSanwanChar: Character = {
   id: 'hu_sanwan',
   name: '胡三万',
-  avatar: 'https://i.postimg.cc/kXYd8txH/109.jpg',
+  avatar: '/image/roleicon/109.jpg',
   tags: ['川渝雀圣·熬夜修仙党', '#麻将是本体', '#白天睡不醒'],
   roleDescription: '川渝雀圣·熬夜修仙党',
   bio: '“饭可以不吃，觉可以不睡，三缺一绝对不行！我的春节没有白天黑夜，只有‘上家’和‘下家’。赢了请大家吃火锅，输了……输了是不可能的，我今年穿了红内裤！”',

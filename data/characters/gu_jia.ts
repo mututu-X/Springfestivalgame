@@ -3,16 +3,16 @@ import { Character, GameEvent, Ending } from '../../types';
 
 // Reuse default images for generic scenes
 const DEFAULT_IMAGES = {
-  morning: 'https://i.postimg.cc/T1vvSY5P/001.jpg',
-  afternoon: 'https://i.postimg.cc/5yWWGNQ2/002.jpg',
-  evening: 'https://i.postimg.cc/NFvvVf2M/003.jpg',
-  sleep: 'https://i.postimg.cc/fyQQFTST/004.jpg'
+  morning: '/image/common/001.jpg',
+  afternoon: '/image/common/002.jpg',
+  evening: '/image/common/003.jpg',
+  sleep: '/image/common/004.jpg'
 };
 
 export const guJiaChar: Character = {
   id: 'gu_jia',
   name: '顾嘉',
-  avatar: 'https://i.postimg.cc/8PXVWrhd/104.jpg',
+  avatar: '/image/roleicon/104.jpg',
   tags: ['全职儿女·家务雇佣兵', '#新型啃老', '#忍辱负重'],
   roleDescription: '全职儿女·家务雇佣兵',
   bio: '“在这个家里，我的地位取决于今天地拖得干不干净。我是忍辱负重的‘忍者神龟’，为了那每个月两千块的‘全职儿女津贴’，我练就了在七大姑八大姨的嘲讽中微笑服务的本领。”',

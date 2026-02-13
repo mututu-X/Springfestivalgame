@@ -29,96 +29,107 @@ export const AchievementScreen: React.FC<Props> = ({ achievements, unlockedIds, 
   return (
     <div className="min-h-screen bg-festive-dark flex flex-col items-center p-4 md:p-8 relative select-none">
       
-      {/* Fixed Back Button */}
-      <button 
-        onClick={onBack}
-        className="fixed top-4 left-4 z-50 p-3 rounded-full bg-black/40 hover:bg-black/60 text-white backdrop-blur-md border border-white/20 transition-all shadow-lg group"
-        aria-label="Back"
-      >
-        <ArrowLeft size={24} className="group-hover:-translate-x-1 transition-transform" />
-      </button>
-
-      {/* Header */}
-      <div className="text-center mt-8 mb-12 space-y-4">
-        <div className="inline-flex items-center justify-center bg-red-600 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-          成就收藏
-        </div>
-        <div className="flex items-center justify-center gap-3">
-           <Trophy size={48} className="text-yellow-400" />
-           <h1 className="text-4xl md:text-5xl font-bold text-white tracking-tight">春节成就墙</h1>
-        </div>
-        <p className="text-yellow-200/80 text-sm">长按已解锁的成就，查看达成条件</p>
+      {/* Container - Light style to match CharacterSelection */}
+      <div className="bg-[#FFF5E6] w-full max-w-6xl rounded-3xl p-6 md:p-10 shadow-2xl relative text-gray-800 border-4 border-yellow-200 flex flex-col items-center min-h-[85vh]">
         
-        <div className="bg-black/30 inline-block px-4 py-1 rounded-full text-xs text-yellow-500 border border-yellow-500/30">
-          已解锁 {unlockedIds.length} / {achievements.length}
+        {/* Header Section */}
+        <div className="text-center mb-8 space-y-4 w-full">
+          <div className="flex items-center justify-between w-full relative">
+             {/* Back Button inside container for better visual flow */}
+             <button 
+                onClick={onBack}
+                className="p-2 md:p-3 rounded-xl bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold flex items-center justify-center shadow-sm transition-colors absolute left-0 top-0"
+              >
+                <ArrowLeft size={20} className="md:w-6 md:h-6" />
+              </button>
+
+              <div className="mx-auto flex flex-col items-center">
+                <div className="flex items-center justify-center gap-3 text-red-800 mb-2">
+                  <Trophy size={32} className="md:w-10 md:h-10 text-yellow-500 drop-shadow-sm" />
+                  <h1 className="text-3xl md:text-5xl font-bold tracking-tight">春节成就墙</h1>
+                </div>
+                
+                <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm md:text-base">
+                   <div className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full border border-yellow-300 font-bold shadow-sm">
+                      已解锁 {unlockedIds.length} / {achievements.length}
+                   </div>
+                   <span className="text-gray-500">长按图标查看达成条件</span>
+                </div>
+              </div>
+              
+              {/* Spacer for symmetry */}
+              <div className="w-10 md:w-12"></div>
+          </div>
+          
+          <div className="h-px bg-gray-300 w-full mt-6"></div>
+        </div>
+
+        {/* Achievement Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 w-full pb-8 overflow-y-auto custom-scrollbar flex-1">
+          {achievements.map((achievement) => {
+            const isUnlocked = unlockedIds.includes(achievement.id);
+            const isHolding = holdingId === achievement.id;
+            
+            return (
+              <div 
+                key={achievement.id}
+                onMouseDown={() => isUnlocked && handlePressStart(achievement.id)}
+                onMouseUp={handlePressEnd}
+                onMouseLeave={handlePressEnd}
+                onTouchStart={() => isUnlocked && handlePressStart(achievement.id)}
+                onTouchEnd={handlePressEnd}
+                onContextMenu={(e) => e.preventDefault()}
+                className={`
+                  relative rounded-2xl p-4 flex flex-col items-center text-center transition-all duration-300 border-2 cursor-pointer
+                  ${isUnlocked 
+                    ? 'bg-white border-yellow-300 shadow-md hover:shadow-lg scale-100' 
+                    : 'bg-gray-200 border-gray-300 opacity-80 scale-95 grayscale'
+                  }
+                  ${isHolding ? 'scale-105 ring-4 ring-red-400 z-10' : ''}
+                `}
+              >
+                {/* Icon Container */}
+                <div className="w-20 h-20 md:w-28 md:h-28 mb-3 relative rounded-lg overflow-hidden bg-gray-50">
+                  <img 
+                     src={achievement.icon} 
+                     alt={achievement.title} 
+                     className={`w-full h-full object-cover pointer-events-none transition-all duration-500 ${!isUnlocked ? 'brightness-50 blur-[1px]' : ''}`}
+                  />
+                  {!isUnlocked && (
+                    <div className="absolute inset-0 flex items-center justify-center text-gray-500/80">
+                      <Lock size={32} />
+                    </div>
+                  )}
+                </div>
+                
+                {/* Title */}
+                <h3 className={`text-base md:text-lg font-bold mb-2 line-clamp-1 leading-tight ${isUnlocked ? 'text-red-800' : 'text-gray-500'}`}>
+                  {isUnlocked ? achievement.title : '???'}
+                </h3>
+                
+                {/* Description Area */}
+                <div className={`text-xs md:text-sm h-16 flex items-center justify-center w-full`}>
+                  {isUnlocked ? (
+                    isHolding ? (
+                      <div className="text-red-600 font-bold bg-yellow-50 p-2 rounded w-full h-full flex items-center justify-center animate-pulse border border-yellow-200">
+                        {achievement.conditionDescription}
+                      </div>
+                    ) : (
+                      <span className="text-gray-600 italic line-clamp-3">"{achievement.quote}"</span>
+                    )
+                  ) : (
+                    <span className="text-gray-400">解锁后查看</span>
+                  )}
+                </div>
+
+              </div>
+            );
+          })}
         </div>
       </div>
-
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl pb-12">
-        
-        {/* Render Real Achievements */}
-        {achievements.map((achievement) => {
-          const isUnlocked = unlockedIds.includes(achievement.id);
-          const isHolding = holdingId === achievement.id;
-          
-          return (
-            <div 
-              key={achievement.id}
-              onMouseDown={() => isUnlocked && handlePressStart(achievement.id)}
-              onMouseUp={handlePressEnd}
-              onMouseLeave={handlePressEnd}
-              onTouchStart={() => isUnlocked && handlePressStart(achievement.id)}
-              onTouchEnd={handlePressEnd}
-              onContextMenu={(e) => e.preventDefault()} // Prevent right-click menu on mobile
-              className={`
-                relative rounded-2xl p-6 flex flex-col items-center text-center transition-all duration-300 border-2 cursor-pointer
-                ${isUnlocked 
-                  ? 'bg-[#FFF5E6] border-yellow-400 shadow-[0_0_20px_rgba(250,204,21,0.3)] scale-100' 
-                  : 'bg-white/5 border-white/10 blur-[1px] opacity-70 scale-95'
-                }
-                ${isHolding ? 'scale-105 ring-4 ring-yellow-200' : ''}
-              `}
-            >
-              <div className="w-24 h-24 mb-4 relative">
-                <img 
-                   src={achievement.icon} 
-                   alt={achievement.title} 
-                   className={`w-full h-full object-contain pointer-events-none ${!isUnlocked ? 'grayscale brightness-50 contrast-125' : ''}`}
-                />
-                {!isUnlocked && (
-                  <div className="absolute inset-0 flex items-center justify-center text-white/50">
-                    <Lock size={32} />
-                  </div>
-                )}
-              </div>
-              
-              <h3 className={`text-xl font-bold mb-2 ${isUnlocked ? 'text-red-800' : 'text-gray-400'}`}>
-                {isUnlocked ? achievement.title : '???'}
-              </h3>
-              
-              <div className={`text-sm mb-4 min-h-[60px] flex items-center justify-center`}>
-                {isUnlocked ? (
-                  isHolding ? (
-                    <span className="text-red-600 font-bold bg-yellow-100 px-2 py-1 rounded animate-pulse">
-                      条件：{achievement.conditionDescription}
-                    </span>
-                  ) : (
-                    <span className="text-gray-600 italic">"{achievement.quote}"</span>
-                  )
-                ) : (
-                  <span className="text-gray-500">继续探索春节故事解锁更多成就</span>
-                )}
-              </div>
-
-              <div className={`w-full py-2 border-t ${isUnlocked ? 'border-yellow-200' : 'border-white/10'}`}>
-                 <span className={`text-xs font-bold ${isUnlocked ? 'text-green-600' : 'text-gray-500'}`}>
-                   {isUnlocked ? '✔ 已解锁 (长按查看)' : '未解锁'}
-                 </span>
-              </div>
-            </div>
-          );
-        })}
+      
+      <div className="text-yellow-500/50 text-xs md:text-sm mt-6">
+           — 收集所有成就，成为春节赢家 —
       </div>
 
     </div>

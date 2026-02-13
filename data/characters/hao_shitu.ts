@@ -4,7 +4,7 @@ import { Character, GameEvent, Ending } from '../../types';
 export const haoShituChar: Character = {
   id: 'hao_shitu',
   name: '郝仕途',
-  avatar: 'public/images/roleicon/101.jpg',
+  avatar: '/images/roleicon/101.jpg',
   tags: ['厅局风·编制内霸总', '#山东丈母娘梦中情婿', '#保温杯里泡枸杞'],
   roleDescription: '厅局风·编制内霸总',
   bio: '"不管是五粮液还是茅台，倒进我的保温杯里都一样。在单位我是小郝，回了村我就是\'省里有人\'的郝处。别问工资，问就是\'死工资，不够油钱\'，但我后备箱里的米面油从来没断过。"',

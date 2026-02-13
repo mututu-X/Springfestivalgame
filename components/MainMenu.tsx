@@ -28,7 +28,7 @@ export const MainMenu: React.FC<Props> = ({ onStart, onAchievements }) => {
           </h1>
           
           <p className="text-gray-200 text-lg tracking-wide">
-            据说只有1%的人才能拿满12个成就？！
+            只有1%的人能拿满12个成就！！
           </p>
           
           {/* Decorative dots */}
